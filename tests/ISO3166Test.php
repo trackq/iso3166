@@ -59,6 +59,6 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      */
     public function testGetByNumericThrowsException()
     {
-        ISO3166::getByAlpha3('000');
+        ISO3166::getByNumeric('000');
     }
 }
