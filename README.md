@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/alcohol/iso3166.png?branch=master)](https://travis-ci.org/alcohol/iso3166)
 
-# CountryList
+# Alcohol\ISO3166
 
 Example:
 
