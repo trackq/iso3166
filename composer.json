@@ -9,7 +9,7 @@
         "countries",
         "library"
     ],
-    "homepage": "https://github.com/alcohol/php-iso3166",
+    "homepage": "https://github.com/alcohol/iso3166",
     "license": "WTFPL",
     "authors": [{
         "name": "Rob Bast",
