@@ -8,7 +8,6 @@ php:
   - 5.5
   - 5.4
   - 5.3
-  - 5.2
 
 script:
   - vendor/bin/phpcs --standard=PSR2 source/
