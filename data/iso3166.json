@@ -74,7 +74,7 @@
         "alpha3": "ARG",
         "numeric": "032",
         "name": "Argentina",
-        "currency": "ARA"
+        "currency": "ARS"
     },
     {
         "alpha2": "AM",
@@ -109,7 +109,7 @@
         "alpha3": "AZE",
         "numeric": "031",
         "name": "Azerbaijan",
-        "currency": "AZM"
+        "currency": "AZN"
     },
     {
         "alpha2": "BS",
@@ -312,7 +312,7 @@
         "alpha3": "CHL",
         "numeric": "152",
         "name": "Chile",
-        "currency": "CLF"
+        "currency": "CLP"
     },
     {
         "alpha2": "CN",
@@ -361,7 +361,7 @@
         "alpha3": "COD",
         "numeric": "180",
         "name": "Congo (the Democratic Republic of the)",
-        "currency": "CDZ"
+        "currency": "CDF"
     },
     {
         "alpha2": "CK",
@@ -396,7 +396,10 @@
         "alpha3": "CUB",
         "numeric": "192",
         "name": "Cuba",
-        "currency": "CUP"
+        "currency": [
+            "CUP",
+            "CUC"
+        ]
     },
     {
         "alpha2": "CW",
@@ -585,7 +588,7 @@
         "alpha3": "GHA",
         "numeric": "288",
         "name": "Ghana",
-        "currency": "GHC"
+        "currency": "GHS"
     },
     {
         "alpha2": "GI",
@@ -648,7 +651,7 @@
         "alpha3": "GIN",
         "numeric": "324",
         "name": "Guinea",
-        "currency": "GNS"
+        "currency": "GNF"
     },
     {
         "alpha2": "GW",
@@ -928,7 +931,7 @@
         "alpha3": "MDG",
         "numeric": "450",
         "name": "Madagascar",
-        "currency": "MGF"
+        "currency": "MGA"
     },
     {
         "alpha2": "MW",
@@ -1061,7 +1064,7 @@
         "alpha3": "MOZ",
         "numeric": "508",
         "name": "Mozambique",
-        "currency": "MZM"
+        "currency": "MZN"
     },
     {
         "alpha2": "MM",
@@ -1117,7 +1120,7 @@
         "alpha3": "NIC",
         "numeric": "558",
         "name": "Nicaragua",
-        "currency": "NIC"
+        "currency": "NIO"
     },
     {
         "alpha2": "NE",
@@ -1215,7 +1218,7 @@
         "alpha3": "PER",
         "numeric": "604",
         "name": "Peru",
-        "currency": "PEI"
+        "currency": "PEN"
     },
     {
         "alpha2": "PH",
@@ -1484,7 +1487,7 @@
         "alpha3": "SUR",
         "numeric": "740",
         "name": "Suriname",
-        "currency": "SRG"
+        "currency": "SRD"
     },
     {
         "alpha2": "SJ",
@@ -1533,7 +1536,7 @@
         "alpha3": "TJK",
         "numeric": "762",
         "name": "Tajikistan",
-        "currency": "TJR"
+        "currency": "TJS"
     },
     {
         "alpha2": "TZ",
@@ -1603,7 +1606,7 @@
         "alpha3": "TKM",
         "numeric": "795",
         "name": "Turkmenistan",
-        "currency": "TMM"
+        "currency": "TMT"
     },
     {
         "alpha2": "TC",
@@ -1624,7 +1627,7 @@
         "alpha3": "UGA",
         "numeric": "800",
         "name": "Uganda",
-        "currency": "UGS"
+        "currency": "UGX"
     },
     {
         "alpha2": "UA",
@@ -1736,7 +1739,7 @@
         "alpha3": "ZMB",
         "numeric": "894",
         "name": "Zambia",
-        "currency": "ZMK"
+        "currency": "ZMW"
     },
     {
         "alpha2": "ZW",
