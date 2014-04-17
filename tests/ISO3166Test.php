@@ -23,9 +23,17 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testGetByInvalidAlpha2ThrowsInvalidArgumentException()
+    {
+        ISO3166::getByAlpha2('ZZZ');
+    }
+
+    /**
      * @expectedException \RuntimeException
      */
-    public function testGetByAlpha2ThrowsException()
+    public function testGetByUnknownAlpha2ThrowsRuntimeException()
     {
         ISO3166::getByAlpha2('ZZ');
     }
@@ -39,9 +47,17 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testGetByInvalidAlpha3ThrowsInvalidArgumentException()
+    {
+        ISO3166::getByAlpha3('ZZ');
+    }
+
+    /**
      * @expectedException \RuntimeException
      */
-    public function testGetByAlpha3ThrowsException()
+    public function testGetByUnknownAlpha3ThrowsRuntimeException()
     {
         ISO3166::getByAlpha3('ZZZ');
     }
@@ -55,9 +71,17 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testGetByInvalidNumericThrowsInvalidArgumentException()
+    {
+        ISO3166::getByNumeric('00');
+    }
+
+    /**
      * @expectedException \RuntimeException
      */
-    public function testGetByNumericThrowsException()
+    public function testGetByUnknownNumericThrowsRuntimeException()
     {
         ISO3166::getByNumeric('000');
     }

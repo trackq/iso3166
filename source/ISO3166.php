@@ -22,16 +22,28 @@ class ISO3166
 
     public static function getByAlpha2($alpha2)
     {
+        if (!preg_match('/[a-zA-Z]{2}/', $alpha2)) {
+            throw new \InvalidArgumentException('Not a valid alpha2: ' . $alpha2);
+        }
+
         return self::getByCode($alpha2);
     }
 
     public static function getByAlpha3($alpha3)
     {
+        if (!preg_match('/[a-zA-Z]{3}/', $alpha3)) {
+            throw new \InvalidArgumentException('Not a valid alpha3: ' . $alpha3);
+        }
+
         return self::getByCode($alpha3);
     }
 
     public static function getByNumeric($numeric)
     {
+        if (!preg_match('/[0-9]{3}/', $numeric)) {
+            throw new \InvalidArgumentException('Not a valid numeric: ' . $numeric);
+        }
+
         $countries = self::getAll();
 
         foreach ($countries as $country) {
