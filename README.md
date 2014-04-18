@@ -23,10 +23,10 @@ Result:
 ```
 Array
 (
+    [name] => Netherlands (the)
     [alpha2] => NL
     [alpha3] => NLD
     [numeric] => 528
-    [name] => Netherlands (the)
     [currency] => EUR
 )
 ```
