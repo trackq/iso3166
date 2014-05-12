@@ -75,8 +75,8 @@ class ISO3166
 
     final protected static function fromDataDir()
     {
-        $json = file_get_contents(__DIR__.'/../data/iso3166.json');
+        $countries = require __DIR__ . '/../data/iso3166.php';
 
-        return json_decode($json, true);
+        return $countries;
     }
 }
