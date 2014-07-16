@@ -12,6 +12,7 @@ class ISO3166
     /**
      * @param string $code
      * @return array
+     * @throws \RuntimeException
      */
     public static function getByCode($code)
     {
@@ -30,6 +31,7 @@ class ISO3166
     /**
      * @param string $alpha2
      * @return array
+     * @throws \InvalidArgumentException
      */
     public static function getByAlpha2($alpha2)
     {
@@ -43,6 +45,7 @@ class ISO3166
     /**
      * @param string $alpha3
      * @return array
+     * @throws \InvalidArgumentException
      */
     public static function getByAlpha3($alpha3)
     {
@@ -56,6 +59,7 @@ class ISO3166
     /**
      * @param string $numeric
      * @return array
+     * @throws \RuntimeException
      */
     public static function getByNumeric($numeric)
     {
