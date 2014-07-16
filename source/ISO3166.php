@@ -7,7 +7,7 @@ class ISO3166
     /**
      * @var array
      */
-    protected static $countries = null;
+    protected static $countries = array();
 
     /**
      * @param string $code
@@ -83,7 +83,7 @@ class ISO3166
      */
     public static function getAll()
     {
-        if (is_null(self::$countries)) {
+        if (empty(self::$countries)) {
             self::load();
         }
 
