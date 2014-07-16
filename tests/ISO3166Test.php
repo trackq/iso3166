@@ -6,6 +6,9 @@ use Alcohol\ISO3166;
 
 class ISO3166Test extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @var array
+     */
     public $data = array(
         'alpha2' => 'AX',
         'alpha3' => 'ALA',
@@ -23,6 +26,8 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @param string $alpha2
+     *
      * @dataProvider invalidAlpha2
      * @expectedException \InvalidArgumentException
      */
@@ -48,6 +53,8 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @param string $alpha3
+     *
      * @dataProvider invalidAlpha3
      * @expectedException \InvalidArgumentException
      */
@@ -57,7 +64,6 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     *
      * @expectedException \RuntimeException
      */
     public function testGetByUnknownAlpha3ThrowsRuntimeException()
@@ -74,6 +80,8 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @param string $numeric
+     *
      * @dataProvider invalidNumeric
      * @expectedException \InvalidArgumentException
      */
@@ -90,16 +98,25 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
         ISO3166::getByNumeric('000');
     }
 
+    /**
+     * @return array
+     */
     public function invalidAlpha2()
     {
         return array(array('Z'), array('ZZZ'));
     }
 
+    /**
+     * @return array
+     */
     public function invalidAlpha3()
     {
         return array(array('ZZ'), array('ZZZZ'));
     }
 
+    /**
+     * @return array
+     */
     public function invalidNumeric()
     {
         return array(array('00'), array('0000'));

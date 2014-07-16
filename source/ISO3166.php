@@ -4,8 +4,15 @@ namespace Alcohol;
 
 class ISO3166
 {
+    /**
+     * @var array
+     */
     protected static $countries = null;
 
+    /**
+     * @param string $code
+     * @return array
+     */
     public static function getByCode($code)
     {
         $countries = self::getAll();
@@ -20,6 +27,10 @@ class ISO3166
         throw new \RuntimeException('No data found for: ' . $code);
     }
 
+    /**
+     * @param string $alpha2
+     * @return array
+     */
     public static function getByAlpha2($alpha2)
     {
         if (!preg_match('/^[a-zA-Z]{2}$/', $alpha2)) {
@@ -29,6 +40,10 @@ class ISO3166
         return self::getByCode($alpha2);
     }
 
+    /**
+     * @param string $alpha3
+     * @return array
+     */
     public static function getByAlpha3($alpha3)
     {
         if (!preg_match('/^[a-zA-Z]{3}$/', $alpha3)) {
@@ -38,6 +53,10 @@ class ISO3166
         return self::getByCode($alpha3);
     }
 
+    /**
+     * @param string $numeric
+     * @return array
+     */
     public static function getByNumeric($numeric)
     {
         if (!preg_match('/^[0-9]{3}$/', $numeric)) {
@@ -55,6 +74,9 @@ class ISO3166
         throw new \RuntimeException('No data found for: ' . $numeric);
     }
 
+    /**
+     * @return array
+     */
     public static function getAll()
     {
         if (is_null(self::$countries)) {
@@ -64,6 +86,9 @@ class ISO3166
         return self::$countries;
     }
 
+    /**
+     * @param array $countries
+     */
     public static function load(array $countries = array())
     {
         if (empty($countries)) {
@@ -73,6 +98,9 @@ class ISO3166
         self::$countries = $countries;
     }
 
+    /**
+     * @return array
+     */
     final protected static function fromDataDir()
     {
         $countries = require __DIR__ . '/../data/iso3166.php';
