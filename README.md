@@ -30,6 +30,8 @@ or manually include it as a dependency in your composer.json:
 Code:
 
 ``` php
+<?php
+
 use Alcohol\ISO3166;
 
 ISO3166::getByAlpha2('NL');
