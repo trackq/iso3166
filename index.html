@@ -35,49 +35,56 @@
 
 <p>A PHP library providing ISO 3166-1 data.</p>
 
-<p><a href="https://packagist.org/packages/alcohol/iso3166"><img src="https://poser.pugx.org/alcohol/iso3166/v/stable.png" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/alcohol/iso3166"><img src="https://poser.pugx.org/alcohol/iso3166/license.png" alt="License"></a>
-<a href="https://waffle.io/alcohol/iso3166"><img src="https://badge.waffle.io/alcohol/iso3166.png?label=ready&amp;title=Ready" alt="Stories in Ready"></a>
-<a href="https://travis-ci.org/alcohol/iso3166"><img src="https://travis-ci.org/alcohol/iso3166.svg?branch=master" alt="Build Status"></a></p>
+<h2>
+<a id="what-is-iso3166-1" class="anchor" href="#what-is-iso3166-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is ISO3166-1</h2>
+
+<blockquote>
+<p>ISO 3166-1 is part of the ISO 3166 standard published by the International Organization for Standardization (ISO), and defines codes for the names of countries, dependent territories, and special areas of geographical interest. The official name of the standard is Codes for the representation of names of countries and their subdivisions – Part 1: Country codes. It defines three sets of country codes:</p>
+
+<ul>
+<li>ISO 3166-1 alpha-2 – two-letter country codes which are the most widely used of the three, and used most prominently for the Internet's country code top-level domains (with a few exceptions).</li>
+<li>ISO 3166-1 alpha-3 – three-letter country codes which allow a better visual association between the codes and the country names than the alpha-2 codes.</li>
+<li>ISO 3166-1 numeric – three-digit country codes which are identical to those developed and maintained by the United Nations Statistics Division, with the advantage of script (writing system) independence, and hence useful for people or systems using non-Latin scripts.</li>
+</ul>
+
+<p><em>-- <a href="http://en.wikipedia.org/wiki/ISO_3166-1">Wikipedia</a></em></p>
+</blockquote>
 
 <h2>
-<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+<a id="installing" class="anchor" href="#installing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing</h2>
 
 <p>Either install directly from command line using composer:</p>
 
-<div class="highlight highlight-sh"><pre><span class="nv">$ </span>composer require <span class="s2">"alcohol/iso3166:~1.0"</span>
-</pre></div>
+<div class="highlight highlight-sh"><pre>$ composer require <span class="s2">"alcohol/iso3166:~2.0"</span></pre></div>
 
 <p>or manually include it as a dependency in your composer.json:</p>
 
-<div class="highlight highlight-javascript"><pre><span class="p">{</span>
-    <span class="s2">"require"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"alcohol/iso3166"</span><span class="o">:</span> <span class="s2">"~1.0"</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
+<div class="highlight highlight-javascript"><pre>{
+    <span class="s2">"require"</span><span class="o">:</span> {
+        <span class="s2">"alcohol/iso3166"</span><span class="o">:</span> <span class="s2">"~2.0"</span>
+    }
+}</pre></div>
 
 <h2>
-<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+<a id="using" class="anchor" href="#using" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using</h2>
 
 <p>Code:</p>
 
-<div class="highlight highlight-php"><pre><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">use</span> <span class="nx">Alcohol\ISO3166</span><span class="p">;</span>
-
-<span class="nx">ISO3166</span><span class="o">::</span><span class="na">getByAlpha2</span><span class="p">(</span><span class="s1">'NL'</span><span class="p">);</span>
- <span class="c1">// or</span>
-<span class="nx">ISO3166</span><span class="o">::</span><span class="na">getByAlpha3</span><span class="p">(</span><span class="s1">'NLD'</span><span class="p">);</span>
- <span class="c1">// or</span>
-<span class="nx">ISO3166</span><span class="o">::</span><span class="na">getByNumeric</span><span class="p">(</span><span class="s1">'528'</span><span class="p">);</span>
-</pre></div>
+<div class="highlight highlight-php"><pre><span class="cp">&lt;?php</span><span class="h"></span>
+<span class="h"></span>
+<span class="h"><span class="nv">$iso3166</span> <span class="o">=</span> <span class="k">new</span> Alcohol\<span class="no">ISO3166</span>;</span>
+<span class="h"></span>
+<span class="h"><span class="nv">$iso3166</span><span class="o">-&gt;</span>getByAlpha2(<span class="s1">'NL'</span>);</span>
+<span class="h"> <span class="c1">// or</span></span>
+<span class="h"><span class="nv">$iso3166</span><span class="o">-&gt;</span>getByAlpha3(<span class="s1">'NLD'</span>);</span>
+<span class="h"> <span class="c1">// or</span></span>
+<span class="h"><span class="nv">$iso3166</span><span class="o">-&gt;</span>getByNumeric(<span class="s1">'528'</span>);</span></pre></div>
 
 <p>Result:</p>
 
 <pre><code>Array
 (
-    [name] =&gt; Netherlands (the)
+    [name] =&gt; Netherlands
     [alpha2] =&gt; NL
     [alpha3] =&gt; NLD
     [numeric] =&gt; 528
@@ -89,6 +96,20 @@
 <a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h2>
 
 <p>Feel free to submit a pull request or create an issue.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Alcohol\ISO3166 is licensed under the MIT license.</p>
+
+<h2>
+<a id="badges" class="anchor" href="#badges" aria-hidden="true"><span class="octicon octicon-link"></span></a>Badges</h2>
+
+<p><a href="https://packagist.org/packages/alcohol/iso3166"><img src="https://poser.pugx.org/alcohol/iso3166/v/stable.png" alt="Latest Stable Version"></a>
+<a href="https://travis-ci.org/alcohol/iso3166"><img src="https://travis-ci.org/alcohol/iso3166.svg?branch=master" alt="Build Status"></a>
+<a href="https://scrutinizer-ci.com/g/alcohol/iso3166/?branch=master"><img src="https://scrutinizer-ci.com/g/alcohol/iso3166/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality"></a>
+<a href="https://packagist.org/packages/alcohol/iso3166"><img src="https://poser.pugx.org/alcohol/iso3166/license.png" alt="License"></a>
+<a href="https://waffle.io/alcohol/iso3166"><img src="https://badge.waffle.io/alcohol/iso3166.png?label=ready&amp;title=Ready" alt="Stories in Ready"></a></p>
       </section>
       <footer>
         <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
