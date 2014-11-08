@@ -89,31 +89,14 @@ class ISO3166
     public static function getAll()
     {
         if (empty(self::$countries)) {
-            self::load();
+            self::loadFromDataDir();
         }
 
         return self::$countries;
     }
 
-    /**
-     * @param array $countries
-     */
-    public static function load(array $countries = array())
+    private static function loadFromDataDir()
     {
-        if (empty($countries)) {
-            $countries = self::fromDataDir();
-        }
-
-        self::$countries = $countries;
-    }
-
-    /**
-     * @return array
-     */
-    final protected static function fromDataDir()
-    {
-        $countries = require __DIR__ . '/../data/iso3166.php';
-
-        return $countries;
+        self::$countries = require __DIR__ . '/data.php';
     }
 }

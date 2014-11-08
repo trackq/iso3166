@@ -10,7 +10,7 @@ clean:
 	rm -rf vendor
 
 test:
-	php -l data/iso3166.php
+	php -l source/data.php
 	vendor/bin/phpunit --strict --testdox
 
 vendor:
