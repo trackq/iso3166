@@ -122,6 +122,16 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @test
+     */
+    public function getAll_returns_array_with_X_elements()
+    {
+        $iso3166 = new ISO3166;
+        $this->assertInternalType('array', $iso3166->getAll());
+        $this->assertCount(249, $iso3166->getAll());
+    }
+
+    /**
      * @return array
      */
     public function invalidAlpha2Provider()

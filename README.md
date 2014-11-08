@@ -39,10 +39,13 @@ Code:
 $iso3166 = new Alcohol\ISO3166;
 
 $iso3166->getByAlpha2('NL');
- // or
+// or
 $iso3166->getByAlpha3('NLD');
- // or
+// or
 $iso3166->getByNumeric('528');
+
+// also
+$iso3166->getAll();
 ```
 
 Result:
