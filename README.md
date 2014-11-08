@@ -66,6 +66,10 @@ Feel free to submit a pull request or create an issue.
 
 Alcohol\ISO3166 is licensed under the MIT license.
 
+## Source(s)
+
+* "[ISO 4217](http://en.wikipedia.org/wiki/ISO_4217)" by [Wikipedia](http://www.wikipedia.org) licensed under [CC BY-SA 3.0 Unported License](http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License)
+
 ## Badges
 
 [![Latest Stable Version](https://poser.pugx.org/alcohol/iso3166/v/stable.png)](https://packagist.org/packages/alcohol/iso3166)
