@@ -30,7 +30,7 @@ class ISO3166
             }
         }
 
-        throw new \RuntimeException('ISO3166-1 does not contain: ' . $code);
+        throw new \RuntimeException('ISO 3166-1 does not contain: ' . $code);
     }
 
     /**
@@ -78,7 +78,7 @@ class ISO3166
             }
         }
 
-        throw new \RuntimeException('ISO3166-1 does not contain: ' . $numeric);
+        throw new \RuntimeException('ISO 3166-1 does not contain: ' . $numeric);
     }
 
     /**

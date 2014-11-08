@@ -29,7 +29,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
     /**
      * @test
      * @expectedException \RuntimeException
-     * @expectedExceptionMessage ISO3166-1 does not contain: ZZ
+     * @expectedExceptionMessage ISO 3166-1 does not contain: ZZ
      */
     public function getByAlpha2_throws_RuntimeException_for_unknown_alpha2()
     {
@@ -65,7 +65,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
     /**
      * @test
      * @expectedException \RuntimeException
-     * @expectedExceptionMessage ISO3166-1 does not contain: ZZZ
+     * @expectedExceptionMessage ISO 3166-1 does not contain: ZZZ
      */
     public function getByAlpha3_throws_RuntimeException_for_unknown_alpha3()
     {
@@ -101,7 +101,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
     /**
      * @test
      * @expectedException \RuntimeException
-     * @expectedExceptionMessage ISO3166-1 does not contain: 000
+     * @expectedExceptionMessage ISO 3166-1 does not contain: 000
      */
     public function getByNumeric_throws_RuntimeException_for_unknown_numeric()
     {
