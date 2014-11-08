@@ -2,9 +2,6 @@
 
 A PHP library providing ISO 3166-1 data.
 
-[![Latest Stable Version](https://poser.pugx.org/alcohol/iso3166/v/stable.png)](https://packagist.org/packages/alcohol/iso3166)
-[![Build Status](https://travis-ci.org/alcohol/iso3166.svg?branch=master)](https://travis-ci.org/alcohol/iso3166)
-
 ## What is ISO3166-1
 
 > ISO 3166-1 is part of the ISO 3166 standard published by the International Organization for Standardization (ISO), and defines codes for the names of countries, dependent territories, and special areas of geographical interest. The official name of the standard is Codes for the representation of names of countries and their subdivisions – Part 1: Country codes. It defines three sets of country codes:
@@ -68,3 +65,11 @@ Feel free to submit a pull request or create an issue.
 ## License
 
 Alcohol\ISO3166 is licensed under the MIT license.
+
+## Badges
+
+[![Latest Stable Version](https://poser.pugx.org/alcohol/iso3166/v/stable.png)](https://packagist.org/packages/alcohol/iso3166)
+[![Build Status](https://travis-ci.org/alcohol/iso3166.svg?branch=master)](https://travis-ci.org/alcohol/iso3166)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/alcohol/iso3166/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/alcohol/iso3166/?branch=master)
+[![License](https://poser.pugx.org/alcohol/iso3166/license.png)](https://packagist.org/packages/alcohol/iso3166)
+[![Stories in Ready](https://badge.waffle.io/alcohol/iso3166.png?label=ready&title=Ready)](https://waffle.io/alcohol/iso3166)
