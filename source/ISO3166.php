@@ -488,7 +488,11 @@ class ISO3166
             'alpha2' => 'CU',
             'alpha3' => 'CUB',
             'numeric' => '192',
-            'currency' => array('CUP', 'CUC'),
+            'currency' =>
+                array(
+                    'CUP',
+                    'CUC'
+                ),
         ),
         array(
             'name' => 'Curaçao',
@@ -1412,7 +1416,11 @@ class ISO3166
             'alpha2' => 'MF',
             'alpha3' => 'MAF',
             'numeric' => '663',
-            'currency' => array('EUR', 'USD'),
+            'currency' =>
+                array(
+                    'EUR',
+                    'USD'
+                ),
         ),
         array(
             'name' => 'Saint Pierre and Miquelon',
@@ -1832,7 +1840,14 @@ class ISO3166
             'alpha2' => 'ZW',
             'alpha3' => 'ZWE',
             'numeric' => '716',
-            'currency' => array('BWP', 'EUR', 'GBP', 'USD', 'ZAR'),
+            'currency' =>
+                array(
+                    'BWP',
+                    'EUR',
+                    'GBP',
+                    'USD',
+                    'ZAR'
+                ),
         ),
     );
 }
