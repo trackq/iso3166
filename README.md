@@ -55,7 +55,7 @@ Result:
 ```
 Array
 (
-    [name] => Netherlands (the)
+    [name] => Netherlands
     [alpha2] => NL
     [alpha3] => NLD
     [numeric] => 528
