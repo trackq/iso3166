@@ -36,7 +36,7 @@
 <p>A PHP library providing ISO 3166-1 data.</p>
 
 <h2>
-<a id="what-is-iso3166-1" class="anchor" href="#what-is-iso3166-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is ISO3166-1</h2>
+<a id="what-is-iso-3166-1" class="anchor" href="#what-is-iso-3166-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is ISO 3166-1</h2>
 
 <blockquote>
 <p>ISO 3166-1 is part of the ISO 3166 standard published by the International Organization for Standardization (ISO), and defines codes for the names of countries, dependent territories, and special areas of geographical interest. The official name of the standard is Codes for the representation of names of countries and their subdivisions – Part 1: Country codes. It defines three sets of country codes:</p>
@@ -75,10 +75,13 @@
 <span class="h"><span class="nv">$iso3166</span> <span class="o">=</span> <span class="k">new</span> Alcohol\<span class="no">ISO3166</span>;</span>
 <span class="h"></span>
 <span class="h"><span class="nv">$iso3166</span><span class="o">-&gt;</span>getByAlpha2(<span class="s1">'NL'</span>);</span>
-<span class="h"> <span class="c1">// or</span></span>
+<span class="h"><span class="c1">// or</span></span>
 <span class="h"><span class="nv">$iso3166</span><span class="o">-&gt;</span>getByAlpha3(<span class="s1">'NLD'</span>);</span>
-<span class="h"> <span class="c1">// or</span></span>
-<span class="h"><span class="nv">$iso3166</span><span class="o">-&gt;</span>getByNumeric(<span class="s1">'528'</span>);</span></pre></div>
+<span class="h"><span class="c1">// or</span></span>
+<span class="h"><span class="nv">$iso3166</span><span class="o">-&gt;</span>getByNumeric(<span class="s1">'528'</span>);</span>
+<span class="h"></span>
+<span class="h"><span class="c1">// also</span></span>
+<span class="h"><span class="nv">$iso3166</span><span class="o">-&gt;</span>getAll();</span></pre></div>
 
 <p>Result:</p>
 
@@ -103,13 +106,12 @@
 <p>Alcohol\ISO3166 is licensed under the MIT license.</p>
 
 <h2>
-<a id="badges" class="anchor" href="#badges" aria-hidden="true"><span class="octicon octicon-link"></span></a>Badges</h2>
+<a id="sources" class="anchor" href="#sources" aria-hidden="true"><span class="octicon octicon-link"></span></a>Source(s)</h2>
 
-<p><a href="https://packagist.org/packages/alcohol/iso3166"><img src="https://poser.pugx.org/alcohol/iso3166/v/stable.png" alt="Latest Stable Version"></a>
-<a href="https://travis-ci.org/alcohol/iso3166"><img src="https://travis-ci.org/alcohol/iso3166.svg?branch=master" alt="Build Status"></a>
-<a href="https://scrutinizer-ci.com/g/alcohol/iso3166/?branch=master"><img src="https://scrutinizer-ci.com/g/alcohol/iso3166/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality"></a>
-<a href="https://packagist.org/packages/alcohol/iso3166"><img src="https://poser.pugx.org/alcohol/iso3166/license.png" alt="License"></a>
-<a href="https://waffle.io/alcohol/iso3166"><img src="https://badge.waffle.io/alcohol/iso3166.png?label=ready&amp;title=Ready" alt="Stories in Ready"></a></p>
+<ul>
+<li>"<a href="http://en.wikipedia.org/wiki/ISO_3166-1">ISO 3166-1</a>" by <a href="http://www.wikipedia.org">Wikipedia</a> licensed under <a href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">CC BY-SA 3.0 Unported License</a>
+</li>
+</ul>
       </section>
       <footer>
         <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
