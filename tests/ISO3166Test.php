@@ -14,118 +14,191 @@ use Alcohol\ISO3166;
 class ISO3166Test extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var array
-     */
-    public $data = array(
-        'alpha2' => 'AX',
-        'alpha3' => 'ALA',
-        'numeric' => '248',
-        'name' => 'Åland Islands',
-        'currency' => 'EUR'
-    );
-
-    public function testGetByAlpha2ReturnsCorrectData()
-    {
-        $this->assertEquals(
-            $this->data,
-            ISO3166::getByAlpha2($this->data['alpha2'])
-        );
-    }
-
-    /**
+     * @test
+     * @dataProvider invalidAlpha2Provider
      * @param string $alpha2
-     *
-     * @dataProvider invalidAlpha2
      * @expectedException \InvalidArgumentException
      */
-    public function testGetByInvalidAlpha2ThrowsInvalidArgumentException($alpha2)
+    public function getByAlpha2_throws_InvalidArgumentException_for_invalid_alpha2($alpha2)
     {
         ISO3166::getByAlpha2($alpha2);
     }
 
     /**
+     * @test
      * @expectedException \RuntimeException
      */
-    public function testGetByUnknownAlpha2ThrowsRuntimeException()
+    public function getByAlpha2_throws_RuntimeException_for_unknown_alpha2()
     {
         ISO3166::getByAlpha2('ZZ');
     }
 
-    public function testGetByAlpha3ReturnsCorrectData()
+    /**
+     * @test
+     * @dataProvider alpha2Provider
+     * @param string $alpha2
+     * @param array $expected
+     */
+    public function getByAlpha2_returns_expected_data($alpha2, array $expected)
     {
         $this->assertEquals(
-            $this->data,
-            ISO3166::getByAlpha3($this->data['alpha3'])
+            $expected,
+            ISO3166::getByAlpha2($alpha2)
         );
     }
 
     /**
+     * @test
      * @param string $alpha3
-     *
-     * @dataProvider invalidAlpha3
+     * @dataProvider invalidAlpha3Provider
      * @expectedException \InvalidArgumentException
      */
-    public function testGetByInvalidAlpha3ThrowsInvalidArgumentException($alpha3)
+    public function getByAlpha3_throws_InvalidArgumentException_for_invalid_alpha3($alpha3)
     {
         ISO3166::getByAlpha3($alpha3);
     }
 
     /**
+     * @test
      * @expectedException \RuntimeException
      */
-    public function testGetByUnknownAlpha3ThrowsRuntimeException()
+    public function getByAlpha3_throws_RuntimeException_for_unknown_alpha3()
     {
         ISO3166::getByAlpha3('ZZZ');
     }
 
-    public function testGetByNumericReturnsCorrectData()
+    /**
+     * @test
+     * @dataProvider alpha3Provider
+     * @param string $alpha3
+     * @param array $expected
+     */
+    public function getByAlpha3_returns_expected_data($alpha3, array $expected)
     {
         $this->assertEquals(
-            $this->data,
-            ISO3166::getByNumeric($this->data['numeric'])
+            $expected,
+            ISO3166::getByAlpha3($alpha3)
         );
     }
 
     /**
+     * @test
      * @param string $numeric
-     *
-     * @dataProvider invalidNumeric
+     * @dataProvider invalidNumericProvider
      * @expectedException \InvalidArgumentException
      */
-    public function testGetByInvalidNumericThrowsInvalidArgumentException($numeric)
+    public function getByNumeric_throws_InvalidArgumentException_for_invalid_numeric($numeric)
     {
         ISO3166::getByNumeric($numeric);
     }
 
     /**
+     * @test
      * @expectedException \RuntimeException
      */
-    public function testGetByUnknownNumericThrowsRuntimeException()
+    public function getByNumeric_throws_RuntimeException_for_unknown_numeric()
     {
         ISO3166::getByNumeric('000');
     }
 
     /**
-     * @return array
+     * @test
+     * @dataProvider numericProvider
+     * @param string $numeric
+     * @param array $expected
      */
-    public function invalidAlpha2()
+    public function getByNumeric_returns_expected_data($numeric, $expected)
     {
-        return array(array('Z'), array('ZZZ'));
+        $this->assertEquals(
+            $expected,
+            ISO3166::getByNumeric($numeric)
+        );
     }
 
     /**
      * @return array
      */
-    public function invalidAlpha3()
+    public function invalidAlpha2Provider()
     {
-        return array(array('ZZ'), array('ZZZZ'));
+        return array(array('Z'), array('ZZZ'), array(1), array(123));
     }
 
     /**
      * @return array
      */
-    public function invalidNumeric()
+    public function alpha2Provider()
     {
-        return array(array('00'), array('0000'));
+        $countries = $this->getCountries();
+
+        return array_reduce(
+            $countries,
+            function (array $carry, array $country) {
+                $carry[] = array($country['alpha2'], $country);
+                return $carry;
+            },
+            array()
+        );
+    }
+
+    /**
+     * @return array
+     */
+    public function invalidAlpha3Provider()
+    {
+        return array(array('ZZ'), array('ZZZZ'), array(12), array(1234));
+    }
+
+    /**
+     * @return array
+     */
+    public function alpha3Provider()
+    {
+        $countries = $this->getCountries();
+
+        return array_reduce(
+            $countries,
+            function (array $carry, array $country) {
+                $carry[] = array($country['alpha3'], $country);
+                return $carry;
+            },
+            array()
+        );
+    }
+
+    /**
+     * @return array
+     */
+    public function invalidNumericProvider()
+    {
+        return array(array('00'), array('0000'), array('ZZ'), array('ZZZZ'));
+    }
+
+    /**
+     * @return array
+     */
+    public function numericProvider()
+    {
+        $countries = $this->getCountries();
+
+        return array_reduce(
+            $countries,
+            function (array $carry, array $country) {
+                $carry[] = array($country['numeric'], $country);
+                return $carry;
+            },
+            array()
+        );
+    }
+
+    /**
+     * @return array
+     */
+    private function getCountries()
+    {
+        $reflected = new \ReflectionClass('Alcohol\ISO3166');
+        $countries = $reflected->getProperty('countries');
+        $countries->setAccessible(true);
+
+        return $countries->getValue(new ISO3166);
     }
 }

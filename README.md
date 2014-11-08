@@ -3,8 +3,6 @@
 A PHP library providing ISO 3166-1 data.
 
 [![Latest Stable Version](https://poser.pugx.org/alcohol/iso3166/v/stable.png)](https://packagist.org/packages/alcohol/iso3166)
-[![License](https://poser.pugx.org/alcohol/iso3166/license.png)](https://packagist.org/packages/alcohol/iso3166)
-[![Stories in Ready](https://badge.waffle.io/alcohol/iso3166.png?label=ready&title=Ready)](https://waffle.io/alcohol/iso3166)
 [![Build Status](https://travis-ci.org/alcohol/iso3166.svg?branch=master)](https://travis-ci.org/alcohol/iso3166)
 
 ## What is ISO3166-1
@@ -16,7 +14,7 @@ A PHP library providing ISO 3166-1 data.
 >
 > *-- [Wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1)*
 
-## Installation
+## Installing
 
 Either install directly from command line using composer:
 
@@ -34,7 +32,7 @@ or manually include it as a dependency in your composer.json:
 }
 ```
 
-## Usage
+## Using
 
 Code:
 
@@ -66,3 +64,7 @@ Array
 ## Contributing
 
 Feel free to submit a pull request or create an issue.
+
+## License
+
+Alcohol\ISO3166 is licensed under the MIT license.
