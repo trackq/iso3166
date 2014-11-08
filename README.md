@@ -73,6 +73,7 @@ Alcohol\ISO3166 is licensed under the MIT license.
 ## Badges
 
 [![Latest Stable Version](https://poser.pugx.org/alcohol/iso3166/v/stable.png)](https://packagist.org/packages/alcohol/iso3166)
+[![Latest Unstable Version](https://poser.pugx.org/alcohol/iso3166/v/unstable.svg)](https://packagist.org/packages/alcohol/iso3166)
 [![Build Status](https://travis-ci.org/alcohol/iso3166.svg?branch=master)](https://travis-ci.org/alcohol/iso3166)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/alcohol/iso3166/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/alcohol/iso3166/?branch=master)
 [![License](https://poser.pugx.org/alcohol/iso3166/license.png)](https://packagist.org/packages/alcohol/iso3166)
