@@ -81,6 +81,14 @@ class ISO3166
         throw new \RuntimeException('ISO3166-1 does not contain: ' . $numeric);
     }
 
+    /**
+     * @return array
+     */
+    public function getAll()
+    {
+        return $this->countries;
+    }
+
     /** @var array */
     protected $countries = array(
         array(
