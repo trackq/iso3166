@@ -16,7 +16,7 @@ A PHP library providing ISO 3166-1 data.
 Either install directly from command line using composer:
 
 ``` sh
-$ composer require "alcohol/iso3166:~2.0@dev"
+$ composer require "alcohol/iso3166:~2.0"
 ```
 
 or manually include it as a dependency in your composer.json:
@@ -24,7 +24,7 @@ or manually include it as a dependency in your composer.json:
 ``` javascript
 {
     "require": {
-        "alcohol/iso3166": "~2.0@dev"
+        "alcohol/iso3166": "~2.0"
     }
 }
 ```
