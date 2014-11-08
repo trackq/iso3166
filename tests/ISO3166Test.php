@@ -18,19 +18,23 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      * @dataProvider invalidAlpha2Provider
      * @param string $alpha2
      * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessageRegExp /^Not a valid alpha2: .*$/
      */
     public function getByAlpha2_throws_InvalidArgumentException_for_invalid_alpha2($alpha2)
     {
-        ISO3166::getByAlpha2($alpha2);
+        $iso3166 = new ISO3166;
+        $iso3166->getByAlpha2($alpha2);
     }
 
     /**
      * @test
      * @expectedException \RuntimeException
+     * @expectedExceptionMessage ISO3166-1 does not contain: ZZ
      */
     public function getByAlpha2_throws_RuntimeException_for_unknown_alpha2()
     {
-        ISO3166::getByAlpha2('ZZ');
+        $iso3166 = new ISO3166;
+        $iso3166->getByAlpha2('ZZ');
     }
 
     /**
@@ -41,10 +45,8 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      */
     public function getByAlpha2_returns_expected_data($alpha2, array $expected)
     {
-        $this->assertEquals(
-            $expected,
-            ISO3166::getByAlpha2($alpha2)
-        );
+        $iso3166 = new ISO3166;
+        $this->assertEquals($expected, $iso3166->getByAlpha2($alpha2));
     }
 
     /**
@@ -52,19 +54,23 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      * @param string $alpha3
      * @dataProvider invalidAlpha3Provider
      * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessageRegExp /^Not a valid alpha3: .*$/
      */
     public function getByAlpha3_throws_InvalidArgumentException_for_invalid_alpha3($alpha3)
     {
-        ISO3166::getByAlpha3($alpha3);
+        $iso3166 = new ISO3166;
+        $iso3166->getByAlpha3($alpha3);
     }
 
     /**
      * @test
      * @expectedException \RuntimeException
+     * @expectedExceptionMessage ISO3166-1 does not contain: ZZZ
      */
     public function getByAlpha3_throws_RuntimeException_for_unknown_alpha3()
     {
-        ISO3166::getByAlpha3('ZZZ');
+        $iso3166 = new ISO3166;
+        $iso3166->getByAlpha3('ZZZ');
     }
 
     /**
@@ -75,10 +81,8 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      */
     public function getByAlpha3_returns_expected_data($alpha3, array $expected)
     {
-        $this->assertEquals(
-            $expected,
-            ISO3166::getByAlpha3($alpha3)
-        );
+        $iso3166 = new ISO3166;
+        $this->assertEquals($expected, $iso3166->getByAlpha3($alpha3));
     }
 
     /**
@@ -86,19 +90,23 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      * @param string $numeric
      * @dataProvider invalidNumericProvider
      * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessageRegExp /^Not a valid numeric: .*$/
      */
     public function getByNumeric_throws_InvalidArgumentException_for_invalid_numeric($numeric)
     {
-        ISO3166::getByNumeric($numeric);
+        $iso3166 = new ISO3166;
+        $iso3166->getByNumeric($numeric);
     }
 
     /**
      * @test
      * @expectedException \RuntimeException
+     * @expectedExceptionMessage ISO3166-1 does not contain: 000
      */
     public function getByNumeric_throws_RuntimeException_for_unknown_numeric()
     {
-        ISO3166::getByNumeric('000');
+        $iso3166 = new ISO3166;
+        $iso3166->getByNumeric('000');
     }
 
     /**
@@ -109,10 +117,8 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      */
     public function getByNumeric_returns_expected_data($numeric, $expected)
     {
-        $this->assertEquals(
-            $expected,
-            ISO3166::getByNumeric($numeric)
-        );
+        $iso3166 = new ISO3166;
+        $this->assertEquals($expected, $iso3166->getByNumeric($numeric));
     }
 
     /**

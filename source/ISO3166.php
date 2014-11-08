@@ -21,9 +21,9 @@ class ISO3166
      * @return array
      * @throws \RuntimeException
      */
-    public static function getByCode($code)
+    public function getByCode($code)
     {
-        foreach (self::$countries as $country) {
+        foreach ($this->countries as $country) {
             if (0 === strcasecmp($code, $country['alpha2']) ||
                 0 === strcasecmp($code, $country['alpha3'])) {
                 return $country;
@@ -38,13 +38,13 @@ class ISO3166
      * @return array
      * @throws \InvalidArgumentException
      */
-    public static function getByAlpha2($alpha2)
+    public function getByAlpha2($alpha2)
     {
         if (!preg_match('/^[a-zA-Z]{2}$/', $alpha2)) {
             throw new \InvalidArgumentException('Not a valid alpha2: ' . $alpha2);
         }
 
-        return self::getByCode($alpha2);
+        return $this->getByCode($alpha2);
     }
 
     /**
@@ -52,13 +52,13 @@ class ISO3166
      * @return array
      * @throws \InvalidArgumentException
      */
-    public static function getByAlpha3($alpha3)
+    public function getByAlpha3($alpha3)
     {
         if (!preg_match('/^[a-zA-Z]{3}$/', $alpha3)) {
             throw new \InvalidArgumentException('Not a valid alpha3: ' . $alpha3);
         }
 
-        return self::getByCode($alpha3);
+        return $this->getByCode($alpha3);
     }
 
     /**
@@ -66,13 +66,13 @@ class ISO3166
      * @return array
      * @throws \RuntimeException
      */
-    public static function getByNumeric($numeric)
+    public function getByNumeric($numeric)
     {
         if (!preg_match('/^[0-9]{3}$/', $numeric)) {
             throw new \InvalidArgumentException('Not a valid numeric: ' . $numeric);
         }
 
-        foreach (self::$countries as $country) {
+        foreach ($this->countries as $country) {
             if (0 === strcasecmp($numeric, $country['numeric'])) {
                 return $country;
             }
@@ -82,7 +82,7 @@ class ISO3166
     }
 
     /** @var array */
-    protected static $countries = array(
+    protected $countries = array(
         array(
             'name' => 'Afghanistan',
             'alpha2' => 'AF',

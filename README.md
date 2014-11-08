@@ -39,13 +39,13 @@ Code:
 ``` php
 <?php
 
-use Alcohol\ISO3166;
+$iso3166 = new Alcohol\ISO3166;
 
-ISO3166::getByAlpha2('NL');
+$iso3166->getByAlpha2('NL');
  // or
-ISO3166::getByAlpha3('NLD');
+$iso3166->getByAlpha3('NLD');
  // or
-ISO3166::getByNumeric('528');
+$iso3166->getByNumeric('528');
 ```
 
 Result:
