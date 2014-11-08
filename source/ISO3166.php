@@ -257,7 +257,7 @@ class ISO3166
             'alpha2' => 'BJ',
             'alpha3' => 'BEN',
             'numeric' => '204',
-            'currency' => 'XAF',
+            'currency' => 'XOF',
         ),
         array(
             'name' => 'Bermuda',
@@ -327,7 +327,11 @@ class ISO3166
             'alpha2' => 'BN',
             'alpha3' => 'BRN',
             'numeric' => '096',
-            'currency' => 'BND',
+            'currency' =>
+                array(
+                    'BND',
+                    'SGD',
+                ),
         ),
         array(
             'name' => 'Bulgaria',
@@ -341,7 +345,7 @@ class ISO3166
             'alpha2' => 'BF',
             'alpha3' => 'BFA',
             'numeric' => '854',
-            'currency' => 'XAF',
+            'currency' => 'XOF',
         ),
         array(
             'name' => 'Burundi',
@@ -474,7 +478,7 @@ class ISO3166
             'alpha2' => 'CI',
             'alpha3' => 'CIV',
             'numeric' => '384',
-            'currency' => 'XAF',
+            'currency' => 'XOF',
         ),
         array(
             'name' => 'Croatia',
@@ -751,7 +755,7 @@ class ISO3166
             'alpha2' => 'GW',
             'alpha3' => 'GNB',
             'numeric' => '624',
-            'currency' => 'GWP',
+            'currency' => 'XOF',
         ),
         array(
             'name' => 'Guyana',
@@ -968,7 +972,11 @@ class ISO3166
             'alpha2' => 'LS',
             'alpha3' => 'LSO',
             'numeric' => '426',
-            'currency' => 'LSL',
+            'currency' =>
+                array(
+                    'LSL',
+                    'ZAR',
+                ),
         ),
         array(
             'name' => 'Liberia',
@@ -1052,7 +1060,7 @@ class ISO3166
             'alpha2' => 'ML',
             'alpha3' => 'MLI',
             'numeric' => '466',
-            'currency' => 'XAF',
+            'currency' => 'XOF',
         ),
         array(
             'name' => 'Malta',
@@ -1171,7 +1179,11 @@ class ISO3166
             'alpha2' => 'NA',
             'alpha3' => 'NAM',
             'numeric' => '516',
-            'currency' => 'NAD',
+            'currency' =>
+                array(
+                    'NAD',
+                    'ZAR',
+                ),
         ),
         array(
             'name' => 'Nauru',
@@ -1595,7 +1607,11 @@ class ISO3166
             'alpha2' => 'SZ',
             'alpha3' => 'SWZ',
             'numeric' => '748',
-            'currency' => 'SZL',
+            'currency' =>
+                array(
+                    'SZL',
+                    'ZAR',
+                ),
         ),
         array(
             'name' => 'Sweden',
@@ -1658,7 +1674,7 @@ class ISO3166
             'alpha2' => 'TG',
             'alpha3' => 'TGO',
             'numeric' => '768',
-            'currency' => 'XAF',
+            'currency' => 'XOF',
         ),
         array(
             'name' => 'Tokelau',
