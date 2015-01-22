@@ -14,117 +14,117 @@ use Alcohol\ISO3166;
 class ISO3166Test extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @test
+     * @testdox Calling getByAlpha2 with an invalid alpha2 throws a InvalidArgumentException.
      * @dataProvider invalidAlpha2Provider
      * @param string $alpha2
      * @expectedException \InvalidArgumentException
      * @expectedExceptionMessageRegExp /^Not a valid alpha2: .*$/
      */
-    public function getByAlpha2_throws_InvalidArgumentException_for_invalid_alpha2($alpha2)
+    public function testGetByAlpha2Invalid($alpha2)
     {
         $iso3166 = new ISO3166;
         $iso3166->getByAlpha2($alpha2);
     }
 
     /**
-     * @test
+     * @testdox Calling getByAlpha2 with an unknown alpha2 throws a RuntimeException.
      * @expectedException \RuntimeException
      * @expectedExceptionMessage ISO 3166-1 does not contain: ZZ
      */
-    public function getByAlpha2_throws_RuntimeException_for_unknown_alpha2()
+    public function testGetByAlpha2Unknown()
     {
         $iso3166 = new ISO3166;
         $iso3166->getByAlpha2('ZZ');
     }
 
     /**
-     * @test
+     * @testdox Calling getByAlpha2 with a known alpha2 returns an associative array with the data.
      * @dataProvider alpha2Provider
      * @param string $alpha2
      * @param array $expected
      */
-    public function getByAlpha2_returns_expected_data($alpha2, array $expected)
+    public function testGetByAlpha2($alpha2, array $expected)
     {
         $iso3166 = new ISO3166;
         $this->assertEquals($expected, $iso3166->getByAlpha2($alpha2));
     }
 
     /**
-     * @test
+     * @testdox Calling getByAlpha3 with an invalid alpha3 throws a InvalidArgumentException.
      * @param string $alpha3
      * @dataProvider invalidAlpha3Provider
      * @expectedException \InvalidArgumentException
      * @expectedExceptionMessageRegExp /^Not a valid alpha3: .*$/
      */
-    public function getByAlpha3_throws_InvalidArgumentException_for_invalid_alpha3($alpha3)
+    public function testGetByAlpha3Invalid($alpha3)
     {
         $iso3166 = new ISO3166;
         $iso3166->getByAlpha3($alpha3);
     }
 
     /**
-     * @test
+     * @testdox Calling getByAlpha3 with an unknown alpha3 throws a RuntimeException.
      * @expectedException \RuntimeException
      * @expectedExceptionMessage ISO 3166-1 does not contain: ZZZ
      */
-    public function getByAlpha3_throws_RuntimeException_for_unknown_alpha3()
+    public function testGetByAlpha3Unknown()
     {
         $iso3166 = new ISO3166;
         $iso3166->getByAlpha3('ZZZ');
     }
 
     /**
-     * @test
+     * @testdox Calling getByAlpha3 with a known alpha3 returns an associative array with the data.
      * @dataProvider alpha3Provider
      * @param string $alpha3
      * @param array $expected
      */
-    public function getByAlpha3_returns_expected_data($alpha3, array $expected)
+    public function testGetByAlpha3($alpha3, array $expected)
     {
         $iso3166 = new ISO3166;
         $this->assertEquals($expected, $iso3166->getByAlpha3($alpha3));
     }
 
     /**
-     * @test
+     * @testdox Calling getByNumeric with an invalid numeric throws a InvalidArgumentException.
      * @param string $numeric
      * @dataProvider invalidNumericProvider
      * @expectedException \InvalidArgumentException
      * @expectedExceptionMessageRegExp /^Not a valid numeric: .*$/
      */
-    public function getByNumeric_throws_InvalidArgumentException_for_invalid_numeric($numeric)
+    public function testGetByNumericInvalid($numeric)
     {
         $iso3166 = new ISO3166;
         $iso3166->getByNumeric($numeric);
     }
 
     /**
-     * @test
+     * @testdox Calling getByNumeric with an unknown numeric throws a RuntimeException.
      * @expectedException \RuntimeException
      * @expectedExceptionMessage ISO 3166-1 does not contain: 000
      */
-    public function getByNumeric_throws_RuntimeException_for_unknown_numeric()
+    public function testGetByNumericUnknown()
     {
         $iso3166 = new ISO3166;
         $iso3166->getByNumeric('000');
     }
 
     /**
-     * @test
+     * @testdox Calling getByNumeric with a known numeric returns an associative array with the data.
      * @dataProvider numericProvider
      * @param string $numeric
      * @param array $expected
      */
-    public function getByNumeric_returns_expected_data($numeric, $expected)
+    public function testGetByNumeric($numeric, $expected)
     {
         $iso3166 = new ISO3166;
         $this->assertEquals($expected, $iso3166->getByNumeric($numeric));
     }
 
     /**
-     * @test
+     * @testdox Calling getAll returns an array with all elements.
      */
-    public function getAll_returns_array_with_X_elements()
+    public function testGetAll()
     {
         $iso3166 = new ISO3166;
         $this->assertInternalType('array', $iso3166->getAll());
