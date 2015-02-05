@@ -144,16 +144,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      */
     public function alpha2Provider()
     {
-        $countries = $this->getCountries();
-
-        return array_reduce(
-            $countries,
-            function (array $carry, array $country) {
-                $carry[] = array($country['alpha2'], $country);
-                return $carry;
-            },
-            array()
-        );
+        return $this->getCountries('alpha2');
     }
 
     /**
@@ -169,16 +160,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      */
     public function alpha3Provider()
     {
-        $countries = $this->getCountries();
-
-        return array_reduce(
-            $countries,
-            function (array $carry, array $country) {
-                $carry[] = array($country['alpha3'], $country);
-                return $carry;
-            },
-            array()
-        );
+        return $this->getCountries('alpha3');
     }
 
     /**
@@ -194,27 +176,26 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      */
     public function numericProvider()
     {
-        $countries = $this->getCountries();
-
-        return array_reduce(
-            $countries,
-            function (array $carry, array $country) {
-                $carry[] = array($country['numeric'], $country);
-                return $carry;
-            },
-            array()
-        );
+        return $this->getCountries('numeric');
     }
 
     /**
      * @return array
      */
-    private function getCountries()
+    private function getCountries($indexedBy)
     {
         $reflected = new \ReflectionClass('Alcohol\ISO3166');
         $countries = $reflected->getProperty('countries');
         $countries->setAccessible(true);
+        $countries = $countries->getValue(new ISO3166);
 
-        return $countries->getValue(new ISO3166);
+        return array_reduce(
+            $countries,
+            function (array $carry, array $country) use ($indexedBy) {
+                $carry[] = array($country[$indexedBy], $country);
+                return $carry;
+            },
+            array()
+        );
     }
 }
