@@ -16,12 +16,12 @@
          bootstrap="vendor/autoload.php">
     <testsuites>
         <testsuite name="ISO3166 Test Suite">
-            <directory>./tests</directory>
+            <file>ISO3166Test.php</file>
         </testsuite>
     </testsuites>
-    <filters>
+    <filter>
         <whitelist>
-            <directory>./source</directory>
+            <file>ISO3166.php</file>
         </whitelist>
-    </filters>
+    </filter>
 </phpunit>
