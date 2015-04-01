@@ -4,7 +4,6 @@ A PHP library providing ISO 3166-1 data.
 
 [![Build Status](https://img.shields.io/travis/alcohol/iso3166/master.svg?style=flat-square)](https://travis-ci.org/alcohol/iso3166)
 [![License](https://img.shields.io/packagist/l/alcohol/iso3166.svg?style=flat-square)](https://packagist.org/packages/alcohol/iso3166)
-[![Version](https://img.shields.io/packagist/v/alcohol/iso3166.svg?style=flat-square)](https://packagist.org/packages/alcohol/iso3166)
 
 ## What is ISO 3166-1
 
