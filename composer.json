@@ -13,7 +13,7 @@
         "source": "https://github.com/alcohol/iso3166"
     },
     "require": {
-        "php": "~5.3"
+        "php": "~5.3, ~7.0"
     },
     "autoload": {
         "psr-4": {
