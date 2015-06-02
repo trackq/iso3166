@@ -1,6 +1,6 @@
 <?php
 
-/**
+/*
  * (c) Rob Bast <rob.bast@gmail.com>
  *
  * For the full copyright and license information, please view
@@ -22,7 +22,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      */
     public function testGetByAlpha2Invalid($alpha2)
     {
-        $iso3166 = new ISO3166;
+        $iso3166 = new ISO3166();
         $iso3166->getByAlpha2($alpha2);
     }
 
@@ -33,7 +33,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      */
     public function testGetByAlpha2Unknown()
     {
-        $iso3166 = new ISO3166;
+        $iso3166 = new ISO3166();
         $iso3166->getByAlpha2('ZZ');
     }
 
@@ -45,7 +45,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      */
     public function testGetByAlpha2($alpha2, array $expected)
     {
-        $iso3166 = new ISO3166;
+        $iso3166 = new ISO3166();
         $this->assertEquals($expected, $iso3166->getByAlpha2($alpha2));
     }
 
@@ -58,7 +58,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      */
     public function testGetByAlpha3Invalid($alpha3)
     {
-        $iso3166 = new ISO3166;
+        $iso3166 = new ISO3166();
         $iso3166->getByAlpha3($alpha3);
     }
 
@@ -69,7 +69,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      */
     public function testGetByAlpha3Unknown()
     {
-        $iso3166 = new ISO3166;
+        $iso3166 = new ISO3166();
         $iso3166->getByAlpha3('ZZZ');
     }
 
@@ -81,7 +81,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      */
     public function testGetByAlpha3($alpha3, array $expected)
     {
-        $iso3166 = new ISO3166;
+        $iso3166 = new ISO3166();
         $this->assertEquals($expected, $iso3166->getByAlpha3($alpha3));
     }
 
@@ -94,7 +94,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      */
     public function testGetByNumericInvalid($numeric)
     {
-        $iso3166 = new ISO3166;
+        $iso3166 = new ISO3166();
         $iso3166->getByNumeric($numeric);
     }
 
@@ -105,7 +105,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      */
     public function testGetByNumericUnknown()
     {
-        $iso3166 = new ISO3166;
+        $iso3166 = new ISO3166();
         $iso3166->getByNumeric('000');
     }
 
@@ -117,7 +117,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      */
     public function testGetByNumeric($numeric, $expected)
     {
-        $iso3166 = new ISO3166;
+        $iso3166 = new ISO3166();
         $this->assertEquals($expected, $iso3166->getByNumeric($numeric));
     }
 
@@ -126,7 +126,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      */
     public function testGetAll()
     {
-        $iso3166 = new ISO3166;
+        $iso3166 = new ISO3166();
         $this->assertInternalType('array', $iso3166->getAll());
         $this->assertCount(249, $iso3166->getAll());
     }
@@ -187,7 +187,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
         $reflected = new \ReflectionClass('Alcohol\ISO3166');
         $countries = $reflected->getProperty('countries');
         $countries->setAccessible(true);
-        $countries = $countries->getValue(new ISO3166);
+        $countries = $countries->getValue(new ISO3166());
 
         return array_reduce(
             $countries,

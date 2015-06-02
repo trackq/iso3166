@@ -1,6 +1,6 @@
 <?php
 
-/**
+/*
  * (c) Rob Bast <rob.bast@gmail.com>
  *
  * For the full copyright and license information, please view
@@ -16,8 +16,8 @@ class ISO3166
 {
     /**
      * @param string $code
-     * @return array
      * @throws \RuntimeException
+     * @return array
      */
     public function getByCode($code)
     {
@@ -28,18 +28,18 @@ class ISO3166
             }
         }
 
-        throw new \RuntimeException('ISO 3166-1 does not contain: ' . $code);
+        throw new \RuntimeException('ISO 3166-1 does not contain: '.$code);
     }
 
     /**
      * @param string $alpha2
-     * @return array
      * @throws \InvalidArgumentException
+     * @return array
      */
     public function getByAlpha2($alpha2)
     {
         if (!preg_match('/^[a-zA-Z]{2}$/', $alpha2)) {
-            throw new \InvalidArgumentException('Not a valid alpha2: ' . $alpha2);
+            throw new \InvalidArgumentException('Not a valid alpha2: '.$alpha2);
         }
 
         return $this->getByCode($alpha2);
@@ -47,13 +47,13 @@ class ISO3166
 
     /**
      * @param string $alpha3
-     * @return array
      * @throws \InvalidArgumentException
+     * @return array
      */
     public function getByAlpha3($alpha3)
     {
         if (!preg_match('/^[a-zA-Z]{3}$/', $alpha3)) {
-            throw new \InvalidArgumentException('Not a valid alpha3: ' . $alpha3);
+            throw new \InvalidArgumentException('Not a valid alpha3: '.$alpha3);
         }
 
         return $this->getByCode($alpha3);
@@ -61,13 +61,13 @@ class ISO3166
 
     /**
      * @param string $numeric
-     * @return array
      * @throws \RuntimeException
+     * @return array
      */
     public function getByNumeric($numeric)
     {
         if (!preg_match('/^[0-9]{3}$/', $numeric)) {
-            throw new \InvalidArgumentException('Not a valid numeric: ' . $numeric);
+            throw new \InvalidArgumentException('Not a valid numeric: '.$numeric);
         }
 
         foreach ($this->countries as $country) {
@@ -76,7 +76,7 @@ class ISO3166
             }
         }
 
-        throw new \RuntimeException('ISO 3166-1 does not contain: ' . $numeric);
+        throw new \RuntimeException('ISO 3166-1 does not contain: '.$numeric);
     }
 
     /**
@@ -325,11 +325,10 @@ class ISO3166
             'alpha2' => 'BN',
             'alpha3' => 'BRN',
             'numeric' => '096',
-            'currency' =>
-                array(
-                    'BND',
-                    'SGD',
-                ),
+            'currency' => array(
+                'BND',
+                'SGD',
+            ),
         ),
         array(
             'name' => 'Bulgaria',
@@ -490,11 +489,10 @@ class ISO3166
             'alpha2' => 'CU',
             'alpha3' => 'CUB',
             'numeric' => '192',
-            'currency' =>
-                array(
-                    'CUP',
-                    'CUC'
-                ),
+            'currency' => array(
+                'CUP',
+                'CUC',
+            ),
         ),
         array(
             'name' => 'Curaçao',
@@ -970,11 +968,10 @@ class ISO3166
             'alpha2' => 'LS',
             'alpha3' => 'LSO',
             'numeric' => '426',
-            'currency' =>
-                array(
-                    'LSL',
-                    'ZAR',
-                ),
+            'currency' => array(
+                'LSL',
+                'ZAR',
+            ),
         ),
         array(
             'name' => 'Liberia',
@@ -1177,11 +1174,10 @@ class ISO3166
             'alpha2' => 'NA',
             'alpha3' => 'NAM',
             'numeric' => '516',
-            'currency' =>
-                array(
-                    'NAD',
-                    'ZAR',
-                ),
+            'currency' => array(
+                'NAD',
+                'ZAR',
+            ),
         ),
         array(
             'name' => 'Nauru',
@@ -1426,11 +1422,10 @@ class ISO3166
             'alpha2' => 'MF',
             'alpha3' => 'MAF',
             'numeric' => '663',
-            'currency' =>
-                array(
-                    'EUR',
-                    'USD'
-                ),
+            'currency' => array(
+                'EUR',
+                'USD',
+            ),
         ),
         array(
             'name' => 'Saint Pierre and Miquelon',
@@ -1605,11 +1600,10 @@ class ISO3166
             'alpha2' => 'SZ',
             'alpha3' => 'SWZ',
             'numeric' => '748',
-            'currency' =>
-                array(
-                    'SZL',
-                    'ZAR',
-                ),
+            'currency' => array(
+                'SZL',
+                'ZAR',
+            ),
         ),
         array(
             'name' => 'Sweden',
@@ -1854,14 +1848,13 @@ class ISO3166
             'alpha2' => 'ZW',
             'alpha3' => 'ZWE',
             'numeric' => '716',
-            'currency' =>
-                array(
-                    'BWP',
-                    'EUR',
-                    'GBP',
-                    'USD',
-                    'ZAR'
-                ),
+            'currency' => array(
+                'BWP',
+                'EUR',
+                'GBP',
+                'USD',
+                'ZAR',
+            ),
         ),
     );
 }
