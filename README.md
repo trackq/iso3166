@@ -39,7 +39,7 @@ Code:
 ``` php
 <?php
 
-$iso3166 = new Alcohol\ISO3166;
+$iso3166 = new Alcohol\ISO3166();
 
 $iso3166->getByAlpha2('NL');
 // or
