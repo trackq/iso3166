@@ -1,4 +1,4 @@
-# alcohol\iso3166
+# alcohol/iso3166
 
 A PHP library providing ISO 3166-1 data.
 
