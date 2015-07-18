@@ -136,7 +136,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      */
     public function invalidAlpha2Provider()
     {
-        return array(array('Z'), array('ZZZ'), array(1), array(123));
+        return [['Z'], ['ZZZ'], [1], [123]];
     }
 
     /**
@@ -152,7 +152,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      */
     public function invalidAlpha3Provider()
     {
-        return array(array('ZZ'), array('ZZZZ'), array(12), array(1234));
+        return [['ZZ'], ['ZZZZ'], [12], [1234]];
     }
 
     /**
@@ -168,7 +168,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      */
     public function invalidNumericProvider()
     {
-        return array(array('00'), array('0000'), array('ZZ'), array('ZZZZ'));
+        return [['00'], ['0000'], ['ZZ'], ['ZZZZ']];
     }
 
     /**
@@ -192,10 +192,10 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
         return array_reduce(
             $countries,
             function (array $carry, array $country) use ($indexedBy) {
-                $carry[] = array($country[$indexedBy], $country);
+                $carry[] = [$country[$indexedBy], $country];
                 return $carry;
             },
-            array()
+            []
         );
     }
 }
