@@ -1,7 +1,7 @@
 language: php
 
 env:
-  secure: VygEKQhqIVN+temwbB8d+qrE7DivzxvmVLTbLilBFnywdpIiIRw/Kypv3RrFIhNCg0cyIRg6v7buvmJ8F0bbLDm0kHAXfaUCjOm8CXxq4cBUJDIQg5yCys64UKB08DfUBhNFb/HY1nnQdqTzqzEBhcgDnNd8jZWTok9QLd68VAk=
+  secure: "XXs0Yt6xDqGAJz07SfI2bDFiUVGfJvsS9ySaMO02sYvsEmkgW8vZcefuQBeM+Onevtbu8fcF3DmNhg/4DXS+hGT5XiZkRcDEC2OeBWY9pTZ+ZdknCHPYFfA9W1s+4K3VT1xIv1DnSmkMXr6WCDLws+Yrtq97+6n6RCZLQknaT3k="
 
 cache:
   directories:
@@ -18,15 +18,9 @@ php:
   - 5.6
   - 7
   - hhvm
-  - hhvm-nightly
-
-matrix:
-  allow_failures:
-    - php: hhvm-nightly
-  fast_finish: true
 
 before_script:
-  - composer config --global github-oauth.github.com $GITHUB_OAUTH_TOKEN
+  - composer config --global github-oauth.github.com $GITHUB_TRAVIS_TOKEN
   - composer self-update --no-interaction --no-progress
   - composer install --no-interaction --no-progress --prefer-dist --profile -v
 
