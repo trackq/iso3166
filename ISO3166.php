@@ -999,7 +999,7 @@ class ISO3166
             'alpha2' => 'LT',
             'alpha3' => 'LTU',
             'numeric' => '440',
-            'currency' => 'LTL',
+            'currency' => 'EUR',
         ],
         [
             'name' => 'Luxembourg',
