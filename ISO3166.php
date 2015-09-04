@@ -20,8 +20,8 @@ class ISO3166
      *
      * @param string $code
      *
-     * @return array
      * @throws \OutOfBoundsException
+     * @return array
      */
     public function getByCode($code)
     {
@@ -40,8 +40,8 @@ class ISO3166
      *
      * @param string $alpha2
      *
-     * @return array
      * @throws \DomainException
+     * @return array
      */
     public function getByAlpha2($alpha2)
     {
@@ -57,8 +57,8 @@ class ISO3166
      *
      * @param string $alpha3
      *
-     * @return array
      * @throws \DomainException
+     * @return array
      */
     public function getByAlpha3($alpha3)
     {
@@ -72,9 +72,9 @@ class ISO3166
     /**
      * @param string $numeric
      *
-     * @return array
      * @throws \DomainException
      * @throws \OutOfBoundsException
+     * @return array
      */
     public function getByNumeric($numeric)
     {
