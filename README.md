@@ -74,5 +74,5 @@ Alcohol\ISO3166 is licensed under the MIT license.
 
 ## Source(s)
 
-* "[ISO 3166-1](http://en.wikipedia.org/wiki/ISO_3166-1)" by [Wikipedia](http://www.wikipedia.org) licensed under [CC BY-SA 3.0 Unported License](http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License)
+* [ISO 3166-1](http://en.wikipedia.org/wiki/ISO_3166-1) by [Wikipedia](http://www.wikipedia.org) licensed under [CC BY-SA 3.0 Unported License](http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License)
 * [www.iso.org](http://www.iso.org)
