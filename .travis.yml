@@ -21,9 +21,9 @@ php:
   - hhvm
 
 before_script:
-  - composer config --global github-oauth.github.com $GITHUB_TRAVIS_TOKEN
-  - composer self-update --no-interaction --no-progress
-  - composer install --no-interaction --no-progress --prefer-dist --profile -v
+  - composer config -n --global github-oauth.github.com $GITHUB_TRAVIS_TOKEN
+  - composer self-update -n --no-progress
+  - composer install -n --no-progress --prefer-dist -o --profile -v
 
 script:
   - vendor/bin/phpunit

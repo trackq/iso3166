@@ -15,9 +15,13 @@ namespace Alcohol;
 class ISO3166
 {
     /**
+     * @used-by ::getByAlpha2()
+     * @used-by ::getByAlpha3()
+     *
      * @param string $code
-     * @throws \RuntimeException
+     *
      * @return array
+     * @throws \OutOfBoundsException
      */
     public function getByCode($code)
     {
@@ -28,32 +32,38 @@ class ISO3166
             }
         }
 
-        throw new \RuntimeException('ISO 3166-1 does not contain: ' . $code);
+        throw new \OutOfBoundsException('ISO 3166-1 does not contain: ' . $code);
     }
 
     /**
+     * @uses ::getByCode()
+     *
      * @param string $alpha2
-     * @throws \InvalidArgumentException
+     *
      * @return array
+     * @throws \DomainException
      */
     public function getByAlpha2($alpha2)
     {
         if (!preg_match('/^[a-zA-Z]{2}$/', $alpha2)) {
-            throw new \InvalidArgumentException('Not a valid alpha2: ' . $alpha2);
+            throw new \DomainException('Not a valid alpha2: ' . $alpha2);
         }
 
         return $this->getByCode($alpha2);
     }
 
     /**
+     * @uses ::getByCode()
+     *
      * @param string $alpha3
-     * @throws \InvalidArgumentException
+     *
      * @return array
+     * @throws \DomainException
      */
     public function getByAlpha3($alpha3)
     {
         if (!preg_match('/^[a-zA-Z]{3}$/', $alpha3)) {
-            throw new \InvalidArgumentException('Not a valid alpha3: ' . $alpha3);
+            throw new \DomainException('Not a valid alpha3: ' . $alpha3);
         }
 
         return $this->getByCode($alpha3);
@@ -61,13 +71,15 @@ class ISO3166
 
     /**
      * @param string $numeric
-     * @throws \RuntimeException
+     *
      * @return array
+     * @throws \DomainException
+     * @throws \OutOfBoundsException
      */
     public function getByNumeric($numeric)
     {
         if (!preg_match('/^[0-9]{3}$/', $numeric)) {
-            throw new \InvalidArgumentException('Not a valid numeric: ' . $numeric);
+            throw new \DomainException('Not a valid numeric: ' . $numeric);
         }
 
         foreach ($this->countries as $country) {
@@ -76,10 +88,12 @@ class ISO3166
             }
         }
 
-        throw new \RuntimeException('ISO 3166-1 does not contain: ' . $numeric);
+        throw new \OutOfBoundsException('ISO 3166-1 does not contain: ' . $numeric);
     }
 
     /**
+     * @uses ::$countries
+     *
      * @return array
      */
     public function getAll()
@@ -87,7 +101,11 @@ class ISO3166
         return $this->countries;
     }
 
-    /** @var array */
+    /**
+     * @used-by ::getAll()
+     *
+     * @var array
+     */
     protected $countries = [
         [
             'name' => 'Afghanistan',
