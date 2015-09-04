@@ -220,7 +220,7 @@ class ISO3166
             'currency' => 'AZN',
         ],
         [
-            'name' => 'Bahamas (the)',
+            'name' => 'Bahamas',
             'alpha2' => 'BS',
             'alpha3' => 'BHS',
             'numeric' => '044',
@@ -332,7 +332,7 @@ class ISO3166
             'currency' => 'BRL',
         ],
         [
-            'name' => 'British Indian Ocean Territory (the)',
+            'name' => 'British Indian Ocean Territory',
             'alpha2' => 'IO',
             'alpha3' => 'IOT',
             'numeric' => '086',
@@ -398,14 +398,14 @@ class ISO3166
             'currency' => 'CVE',
         ],
         [
-            'name' => 'Cayman Islands (the)',
+            'name' => 'Cayman Islands',
             'alpha2' => 'KY',
             'alpha3' => 'CYM',
             'numeric' => '136',
             'currency' => 'KYD',
         ],
         [
-            'name' => 'Central African Republic (the)',
+            'name' => 'Central African Republic',
             'alpha2' => 'CF',
             'alpha3' => 'CAF',
             'numeric' => '140',
@@ -440,7 +440,7 @@ class ISO3166
             'currency' => 'AUD',
         ],
         [
-            'name' => 'Cocos (Keeling) Islands (the)',
+            'name' => 'Cocos (Keeling) Islands',
             'alpha2' => 'CC',
             'alpha3' => 'CCK',
             'numeric' => '166',
@@ -454,28 +454,28 @@ class ISO3166
             'currency' => 'COP',
         ],
         [
-            'name' => 'Comoros (the)',
+            'name' => 'Comoros',
             'alpha2' => 'KM',
             'alpha3' => 'COM',
             'numeric' => '174',
             'currency' => 'KMF',
         ],
         [
-            'name' => 'Congo (the)',
+            'name' => 'Congo',
             'alpha2' => 'CG',
             'alpha3' => 'COG',
             'numeric' => '178',
             'currency' => 'XAF',
         ],
         [
-            'name' => 'Congo (the Democratic Republic of the)',
+            'name' => 'Congo (Democratic Republic of the)',
             'alpha2' => 'CD',
             'alpha3' => 'COD',
             'numeric' => '180',
             'currency' => 'CDF',
         ],
         [
-            'name' => 'Cook Islands (the)',
+            'name' => 'Cook Islands',
             'alpha2' => 'CK',
             'alpha3' => 'COK',
             'numeric' => '184',
@@ -527,7 +527,7 @@ class ISO3166
             'currency' => 'EUR',
         ],
         [
-            'name' => 'Czech Republic (the)',
+            'name' => 'Czech Republic',
             'alpha2' => 'CZ',
             'alpha3' => 'CZE',
             'numeric' => '203',
@@ -555,7 +555,7 @@ class ISO3166
             'currency' => 'XCD',
         ],
         [
-            'name' => 'Dominican Republic (the)',
+            'name' => 'Dominican Republic',
             'alpha2' => 'DO',
             'alpha3' => 'DOM',
             'numeric' => '214',
@@ -611,14 +611,14 @@ class ISO3166
             'currency' => 'ETB',
         ],
         [
-            'name' => 'Falkland Islands (the) [Malvinas]',
+            'name' => 'Falkland Islands (Malvinas)',
             'alpha2' => 'FK',
             'alpha3' => 'FLK',
             'numeric' => '238',
             'currency' => 'FKP',
         ],
         [
-            'name' => 'Faroe Islands (the)',
+            'name' => 'Faroe Islands',
             'alpha2' => 'FO',
             'alpha3' => 'FRO',
             'numeric' => '234',
@@ -660,7 +660,7 @@ class ISO3166
             'currency' => 'XPF',
         ],
         [
-            'name' => 'French Southern Territories (the)',
+            'name' => 'French Southern Territories',
             'alpha2' => 'TF',
             'alpha3' => 'ATF',
             'numeric' => '260',
@@ -674,7 +674,7 @@ class ISO3166
             'currency' => 'XAF',
         ],
         [
-            'name' => 'Gambia (the)',
+            'name' => 'Gambia',
             'alpha2' => 'GM',
             'alpha3' => 'GMB',
             'numeric' => '270',
@@ -793,7 +793,7 @@ class ISO3166
             'currency' => 'AUD',
         ],
         [
-            'name' => 'Holy See (the)',
+            'name' => 'Holy See',
             'alpha2' => 'VA',
             'alpha3' => 'VAT',
             'numeric' => '336',
@@ -933,14 +933,14 @@ class ISO3166
             'currency' => 'AUD',
         ],
         [
-            'name' => 'Korea (the Democratic People\'s Republic of)',
+            'name' => 'Korea (Democratic People\'s Republic of)',
             'alpha2' => 'KP',
             'alpha3' => 'PRK',
             'numeric' => '408',
             'currency' => 'KPW',
         ],
         [
-            'name' => 'Korea (the Republic of)',
+            'name' => 'Korea (Republic of)',
             'alpha2' => 'KR',
             'alpha3' => 'KOR',
             'numeric' => '410',
@@ -961,7 +961,7 @@ class ISO3166
             'currency' => 'KGS',
         ],
         [
-            'name' => 'Lao People\'s Democratic Republic (the)',
+            'name' => 'Lao People\'s Democratic Republic',
             'alpha2' => 'LA',
             'alpha3' => 'LAO',
             'numeric' => '418',
@@ -1083,7 +1083,7 @@ class ISO3166
             'currency' => 'EUR',
         ],
         [
-            'name' => 'Marshall Islands (the)',
+            'name' => 'Marshall Islands',
             'alpha2' => 'MH',
             'alpha3' => 'MHL',
             'numeric' => '584',
@@ -1132,7 +1132,7 @@ class ISO3166
             'currency' => 'USD',
         ],
         [
-            'name' => 'Moldova (the Republic of)',
+            'name' => 'Moldova (Republic of)',
             'alpha2' => 'MD',
             'alpha3' => 'MDA',
             'numeric' => '498',
@@ -1212,7 +1212,7 @@ class ISO3166
             'currency' => 'NPR',
         ],
         [
-            'name' => 'Netherlands (the)',
+            'name' => 'Netherlands',
             'alpha2' => 'NL',
             'alpha3' => 'NLD',
             'numeric' => '528',
@@ -1240,7 +1240,7 @@ class ISO3166
             'currency' => 'NIO',
         ],
         [
-            'name' => 'Niger (the)',
+            'name' => 'Niger',
             'alpha2' => 'NE',
             'alpha3' => 'NER',
             'numeric' => '562',
@@ -1268,7 +1268,7 @@ class ISO3166
             'currency' => 'AUD',
         ],
         [
-            'name' => 'Northern Mariana Islands (the)',
+            'name' => 'Northern Mariana Islands',
             'alpha2' => 'MP',
             'alpha3' => 'MNP',
             'numeric' => '580',
@@ -1338,7 +1338,7 @@ class ISO3166
             'currency' => 'PEN',
         ],
         [
-            'name' => 'Philippines (the)',
+            'name' => 'Philippines',
             'alpha2' => 'PH',
             'alpha3' => 'PHL',
             'numeric' => '608',
@@ -1394,7 +1394,7 @@ class ISO3166
             'currency' => 'RON',
         ],
         [
-            'name' => 'Russian Federation (the)',
+            'name' => 'Russian Federation',
             'alpha2' => 'RU',
             'alpha3' => 'RUS',
             'numeric' => '643',
@@ -1593,7 +1593,7 @@ class ISO3166
             'currency' => 'LKR',
         ],
         [
-            'name' => 'Sudan (the)',
+            'name' => 'Sudan',
             'alpha2' => 'SD',
             'alpha3' => 'SDN',
             'numeric' => '729',
@@ -1729,7 +1729,7 @@ class ISO3166
             'currency' => 'TMT',
         ],
         [
-            'name' => 'Turks and Caicos Islands (the)',
+            'name' => 'Turks and Caicos Islands',
             'alpha2' => 'TC',
             'alpha3' => 'TCA',
             'numeric' => '796',
@@ -1757,28 +1757,28 @@ class ISO3166
             'currency' => 'UAH',
         ],
         [
-            'name' => 'United Arab Emirates (the)',
+            'name' => 'United Arab Emirates',
             'alpha2' => 'AE',
             'alpha3' => 'ARE',
             'numeric' => '784',
             'currency' => 'AED',
         ],
         [
-            'name' => 'United Kingdom of Great Britain and Northern Ireland (the)',
+            'name' => 'United Kingdom of Great Britain and Northern Ireland',
             'alpha2' => 'GB',
             'alpha3' => 'GBR',
             'numeric' => '826',
             'currency' => 'GBP',
         ],
         [
-            'name' => 'United States of America (the)',
+            'name' => 'United States of America',
             'alpha2' => 'US',
             'alpha3' => 'USA',
             'numeric' => '840',
             'currency' => 'USD',
         ],
         [
-            'name' => 'United States Minor Outlying Islands (the)',
+            'name' => 'United States Minor Outlying Islands',
             'alpha2' => 'UM',
             'alpha3' => 'UMI',
             'numeric' => '581',
