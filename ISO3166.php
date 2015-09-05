@@ -77,7 +77,6 @@ class ISO3166
      * @param string $numeric
      *
      * @throws \DomainException
-     * @throws \OutOfBoundsException
      * @return array
      */
     public function getByNumeric($numeric)
