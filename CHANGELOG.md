@@ -14,5 +14,5 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2.2.0 - 2015-07-31
 ### Changed
-- Dropped support for 5.3, switched to short array notation.
+- Dropped support for PHP 5.3, switched to short array notation.
 - Updated Lithuanian currency to EUR.
