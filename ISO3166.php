@@ -17,6 +17,7 @@ class ISO3166
     /**
      * @used-by ::getByAlpha2()
      * @used-by ::getByAlpha3()
+     * @used-by ::getByNumeric()
      *
      * @param string $code
      *
@@ -27,7 +28,8 @@ class ISO3166
     {
         foreach ($this->countries as $country) {
             if (0 === strcasecmp($code, $country['alpha2']) ||
-                0 === strcasecmp($code, $country['alpha3'])) {
+                0 === strcasecmp($code, $country['alpha3']) ||
+                0 === strcasecmp($code, $country['numeric'])) {
                 return $country;
             }
         }
@@ -70,6 +72,8 @@ class ISO3166
     }
 
     /**
+     * @uses ::getByCode()
+     *
      * @param string $numeric
      *
      * @throws \DomainException
@@ -82,13 +86,7 @@ class ISO3166
             throw new \DomainException('Not a valid numeric: ' . $numeric);
         }
 
-        foreach ($this->countries as $country) {
-            if (0 === strcasecmp($numeric, $country['numeric'])) {
-                return $country;
-            }
-        }
-
-        throw new \OutOfBoundsException('ISO 3166-1 does not contain: ' . $numeric);
+        return $this->getByCode($numeric);
     }
 
     /**
