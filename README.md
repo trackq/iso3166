@@ -16,20 +16,8 @@ A PHP library providing ISO 3166-1 data.
 
 ## Installing
 
-Either install directly from command line using composer:
-
 ``` sh
-$ composer require "alcohol/iso3166:~3.0"
-```
-
-or manually include it as a dependency in your composer.json:
-
-``` javascript
-{
-    "require": {
-        "alcohol/iso3166": "~3.0"
-    }
-}
+$ composer require "alcohol/iso3166:
 ```
 
 ## Using
