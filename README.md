@@ -17,7 +17,7 @@ A PHP library providing ISO 3166-1 data.
 ## Installing
 
 ``` sh
-$ composer require "alcohol/iso3166:
+$ composer require alcohol/iso3166
 ```
 
 ## Using
