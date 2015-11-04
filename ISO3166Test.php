@@ -7,18 +7,17 @@
  * the LICENSE file that was distributed with this source code.
  */
 
-namespace Alcohol\Tests;
-
-use Alcohol\ISO3166;
+namespace Alcohol;
 
 class ISO3166Test extends \PHPUnit_Framework_TestCase
 {
     /**
      * @testdox Calling getByAlpha2 with an invalid alpha2 throws a DomainException.
      * @dataProvider invalidAlpha2Provider
-     * @param string $alpha2
      * @expectedException \DomainException
      * @expectedExceptionMessageRegExp /^Not a valid alpha2: .*$/
+     *
+     * @param string $alpha2
      */
     public function testGetByAlpha2Invalid($alpha2)
     {
@@ -40,6 +39,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
     /**
      * @testdox Calling getByAlpha2 with a known alpha2 returns an associative array with the data.
      * @dataProvider alpha2Provider
+     *
      * @param string $alpha2
      * @param array $expected
      */
@@ -51,10 +51,11 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
 
     /**
      * @testdox Calling getByAlpha3 with an invalid alpha3 throws a DomainException.
-     * @param string $alpha3
      * @dataProvider invalidAlpha3Provider
      * @expectedException \DomainException
      * @expectedExceptionMessageRegExp /^Not a valid alpha3: .*$/
+     *
+     * @param string $alpha3
      */
     public function testGetByAlpha3Invalid($alpha3)
     {
@@ -76,6 +77,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
     /**
      * @testdox Calling getByAlpha3 with a known alpha3 returns an associative array with the data.
      * @dataProvider alpha3Provider
+     *
      * @param string $alpha3
      * @param array $expected
      */
@@ -87,10 +89,11 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
 
     /**
      * @testdox Calling getByNumeric with an invalid numeric throws a DomainException.
-     * @param string $numeric
      * @dataProvider invalidNumericProvider
      * @expectedException \DomainException
      * @expectedExceptionMessageRegExp /^Not a valid numeric: .*$/
+     *
+     * @param string $numeric
      */
     public function testGetByNumericInvalid($numeric)
     {
@@ -112,6 +115,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
     /**
      * @testdox Calling getByNumeric with a known numeric returns an associative array with the data.
      * @dataProvider numericProvider
+     *
      * @param string $numeric
      * @param array $expected
      */
@@ -193,6 +197,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
             $countries,
             function (array $carry, array $country) use ($indexedBy) {
                 $carry[] = [$country[$indexedBy], $country];
+
                 return $carry;
             },
             []

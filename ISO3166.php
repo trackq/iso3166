@@ -22,6 +22,7 @@ class ISO3166
      * @param string $code
      *
      * @throws \OutOfBoundsException
+     *
      * @return array
      */
     public function getByCode($code)
@@ -34,7 +35,7 @@ class ISO3166
             }
         }
 
-        throw new \OutOfBoundsException('ISO 3166-1 does not contain: ' . $code);
+        throw new \OutOfBoundsException('ISO 3166-1 does not contain: '.$code);
     }
 
     /**
@@ -43,12 +44,13 @@ class ISO3166
      * @param string $alpha2
      *
      * @throws \DomainException
+     *
      * @return array
      */
     public function getByAlpha2($alpha2)
     {
         if (!preg_match('/^[a-zA-Z]{2}$/', $alpha2)) {
-            throw new \DomainException('Not a valid alpha2: ' . $alpha2);
+            throw new \DomainException('Not a valid alpha2: '.$alpha2);
         }
 
         return $this->getByCode($alpha2);
@@ -60,12 +62,13 @@ class ISO3166
      * @param string $alpha3
      *
      * @throws \DomainException
+     *
      * @return array
      */
     public function getByAlpha3($alpha3)
     {
         if (!preg_match('/^[a-zA-Z]{3}$/', $alpha3)) {
-            throw new \DomainException('Not a valid alpha3: ' . $alpha3);
+            throw new \DomainException('Not a valid alpha3: '.$alpha3);
         }
 
         return $this->getByCode($alpha3);
@@ -77,12 +80,13 @@ class ISO3166
      * @param string $numeric
      *
      * @throws \DomainException
+     *
      * @return array
      */
     public function getByNumeric($numeric)
     {
         if (!preg_match('/^[0-9]{3}$/', $numeric)) {
-            throw new \DomainException('Not a valid numeric: ' . $numeric);
+            throw new \DomainException('Not a valid numeric: '.$numeric);
         }
 
         return $this->getByCode($numeric);
