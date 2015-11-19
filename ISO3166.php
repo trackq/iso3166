@@ -15,9 +15,7 @@ namespace Alcohol;
 class ISO3166
 {
     /**
-     * @used-by ::getByAlpha2()
-     * @used-by ::getByAlpha3()
-     * @used-by ::getByNumeric()
+     * @api
      *
      * @param string $code
      *
@@ -39,6 +37,8 @@ class ISO3166
     }
 
     /**
+     * @api
+     *
      * @uses ::getByCode()
      *
      * @param string $alpha2
@@ -57,6 +57,8 @@ class ISO3166
     }
 
     /**
+     * @api
+     *
      * @uses ::getByCode()
      *
      * @param string $alpha3
@@ -75,6 +77,8 @@ class ISO3166
     }
 
     /**
+     * @api
+     *
      * @uses ::getByCode()
      *
      * @param string $numeric
@@ -93,6 +97,8 @@ class ISO3166
     }
 
     /**
+     * @api
+     *
      * @uses ::$countries
      *
      * @return array
@@ -103,7 +109,7 @@ class ISO3166
     }
 
     /**
-     * @used-by ::getAll()
+     * @internal
      *
      * @var array
      */
