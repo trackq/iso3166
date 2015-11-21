@@ -58,7 +58,7 @@ Feel free to submit a pull request or create an issue.
 
 ## License
 
-Alcohol\ISO3166 is licensed under the MIT license.
+alcohol/iso3166 is licensed under the MIT license.
 
 ## Source(s)
 
