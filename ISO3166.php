@@ -9,7 +9,7 @@
 
 namespace Alcohol\ISO3166;
 
-class ISO3166 implements \Iterator, \Countable, DataProvider
+class ISO3166 implements \IteratorAggregate, \Countable, DataProvider
 {
     /**
      * Iterate with alpha2 value as key.
@@ -160,53 +160,13 @@ class ISO3166 implements \Iterator, \Countable, DataProvider
     /**
      * @internal
      *
-     * @return array
+     * @return \Traversable
      */
-    public function current()
+    public function getIterator()
     {
-        return $this->countries[$this->position];
-    }
-
-    /**
-     * @internal
-     *
-     * @return string
-     */
-    public function key()
-    {
-        return $this->current()[$this->iteratorKey];
-    }
-
-    /**
-     * @internal
-     */
-    public function next()
-    {
-        ++$this->position;
-    }
-
-    /**
-     * @internal
-     */
-    public function rewind()
-    {
-        $this->position = 0;
-    }
-
-    /**
-     * @internal
-     *
-     * @param int $position
-     *
-     * @return bool
-     */
-    public function valid($position = null)
-    {
-        if (null === $position) {
-            $position = $this->position;
+        foreach ($this->countries as $country) {
+            yield $country[$this->iteratorKey] => $country;
         }
-
-        return array_key_exists($position, $this->countries);
     }
 
     /**
