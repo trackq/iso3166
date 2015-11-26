@@ -7,35 +7,61 @@
  * the LICENSE file that was distributed with this source code.
  */
 
-namespace Alcohol;
+namespace Alcohol\ISO3166;
 
-/**
- * A library providing ISO 3166-1 data.
- */
-class ISO3166
+class ISO3166 implements \Iterator, \Countable, DataProvider
 {
     /**
-     * @api
+     * Iterate with alpha2 value as key.
      *
-     * @param string $code
-     *
-     * @throws \OutOfBoundsException
-     *
-     * @return array
+     * @var string
      */
-    public function getByCode($code)
+    const KEY_ALPHA2 = 'alpha2';
+
+    /**
+     * Iterate with alpha3 value as key.
+     *
+     * @var string
+     */
+    const KEY_ALPHA3 = 'alpha3';
+
+    /**
+     * Iterate with numeric value as key.
+     *
+     * @var string
+     */
+    const KEY_NUMERIC = 'numeric';
+
+    /**
+     * Tracks iterator position.
+     *
+     * @var int
+     */
+    private $position = 0;
+
+    /**
+     * Determines which value to return as key when iterating.
+     *
+     * @var string
+     */
+    private $iteratorKey;
+
+    /**
+     * @param string $iteratorKey Either 'alpha2', 'alpha3' or 'numeric'.
+     */
+    public function __construct($iteratorKey = self::KEY_ALPHA2)
     {
-        foreach ($this->countries as $country) {
-            if (0 === strcasecmp($code, $country['alpha2']) ||
-                0 === strcasecmp($code, $country['alpha3']) ||
-                0 === strcasecmp($code, $country['numeric'])) {
-                return $country;
-            }
+        if (!in_array($iteratorKey, $keys = [self::KEY_ALPHA2, self::KEY_ALPHA3, self::KEY_NUMERIC], true)) {
+            throw new \DomainException(
+                'Invalid value given for $iteratorKey, got "%s", expected one of: %s',
+                $iteratorKey,
+                implode(', ', $keys)
+            );
         }
 
-        throw new \OutOfBoundsException('ISO 3166-1 does not contain: '.$code);
+        $this->iteratorKey = $iteratorKey;
+        $this->position = 0;
     }
-
     /**
      * @api
      *
@@ -99,6 +125,29 @@ class ISO3166
     /**
      * @api
      *
+     * @param string $code
+     *
+     * @throws \OutOfBoundsException
+     *
+     * @return array
+     */
+    public function getByCode($code)
+    {
+        foreach ($this->countries as $country) {
+            if (0 === strcasecmp($code, $country['alpha2']) ||
+                0 === strcasecmp($code, $country['alpha3']) ||
+                0 === strcasecmp($code, $country['numeric'])
+            ) {
+                return $country;
+            }
+        }
+
+        throw new \OutOfBoundsException('ISO 3166-1 does not contain: '.$code);
+    }
+
+    /**
+     * @api
+     *
      * @uses ::$countries
      *
      * @return array
@@ -111,9 +160,69 @@ class ISO3166
     /**
      * @internal
      *
+     * @return array
+     */
+    public function current()
+    {
+        return $this->countries[$this->position];
+    }
+
+    /**
+     * @internal
+     *
+     * @return string
+     */
+    public function key()
+    {
+        return $this->current()[$this->iteratorKey];
+    }
+
+    /**
+     * @internal
+     */
+    public function next()
+    {
+        ++$this->position;
+    }
+
+    /**
+     * @internal
+     */
+    public function rewind()
+    {
+        $this->position = 0;
+    }
+
+    /**
+     * @internal
+     *
+     * @param int $position
+     *
+     * @return bool
+     */
+    public function valid($position = null)
+    {
+        if (null === $position) {
+            $position = $this->position;
+        }
+
+        return array_key_exists($position, $this->countries);
+    }
+
+    /**
+     * @internal
+     *
+     * @return int
+     */
+    public function count()
+    {
+        return count($this->countries);
+    }
+
+    /**
      * @var array
      */
-    protected $countries = [
+    private $countries = [
         [
             'name' => 'Afghanistan',
             'alpha2' => 'AF',
