@@ -37,7 +37,7 @@ $iso3166->getByAlpha3('NLD');
 $iso3166->getByNumeric('528');
 
 // methods provided for convenience
-array $iso3166->getAll();
+$iso3166->getAll();
 foreach ($iso3166 as $key => $value) {
     // simple iterator implementation using a generator (uses alpha2 for keys)
 }
