@@ -136,33 +136,44 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @testdox Iterating the instance should behave as expected.
+     * @testdox Iterating over $instance should behave as expected.
      */
     public function testIterator()
     {
-        try {
-            new ISO3166('foo');
-        } catch (\Exception $e) {
-            $this->assertInstanceOf('DomainException', $e);
-            $this->assertRegExp('{Invalid value given for \$iteratorKey, got "\w++", expected one of:(?: \w++,?)+}', $e->getMessage());
-        }
-
-
         $iso3166 = new ISO3166();
+
         $i = 0;
         foreach ($iso3166 as $key => $value) {
             ++$i;
         }
-        $this->assertEquals(count($iso3166->getAll()), $i, 'Compare iterator count to count(getAll()).');
+
+        $this->assertEquals(count($iso3166->getAll()), $i, 'Compare iterated count to count(getAll()).');
     }
 
     /**
-     * @testdox Iterator should be count()'able.
+     * @testdox Iterating over $instance->listBy() should behave as expected.
      */
-    public function testCountable()
+    public function testListBy()
     {
         $iso3166 = new ISO3166();
-        $this->assertEquals(count($iso3166->getAll()), count($iso3166));
+
+        try {
+            foreach ($iso3166->listBy('foo') as $key => $value) {
+                // void
+            }
+        } catch (\Exception $e) {
+            $this->assertInstanceOf('DomainException', $e);
+            $this->assertRegExp('{Invalid value for \$indexBy, got "\w++", expected one of:(?: \w++,?)+}', $e->getMessage());
+        } finally {
+            $this->assertTrue(isset($e));
+        }
+
+        $i = 0;
+        foreach ($iso3166->listBy(ISO3166::KEY_ALPHA3) as $key => $value) {
+            ++$i;
+        }
+
+        $this->assertEquals(count($iso3166->getAll()), $i, 'Compare iterated count to count(getAll()).');
     }
 
     /**

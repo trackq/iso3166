@@ -31,18 +31,22 @@ use Alcohol\ISO3166\ISO3166;
 
 $iso3166 = new ISO3166();
 
+// methods defined by interface Alcohol\ISO3166\DataProvider
 $iso3166->getByAlpha2('NL');
-// or
 $iso3166->getByAlpha3('NLD');
-// or
 $iso3166->getByNumeric('528');
 
-// also
-$iso3166->getAll();
+// methods provided for convenience
+array $iso3166->getAll();
 
-// and
+// simple iterator implementation using a generator (uses alpha2 for keys)
 foreach ($iso3166 as $key => $value) {
     // ...
+}
+
+// use a specific generator to iterate using other available keys, e.g.
+foreach ($iso3166->listBy(ISO3166::KEY_ALPHA3) as $key => $value) {
+    // ... constants available are KEY_ALPHA2, KEY_ALPHA3, KEY_NUMERIC
 }
 ```
 

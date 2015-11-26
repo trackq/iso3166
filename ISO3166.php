@@ -9,7 +9,7 @@
 
 namespace Alcohol\ISO3166;
 
-class ISO3166 implements \IteratorAggregate, \Countable, DataProvider
+class ISO3166 implements \IteratorAggregate, DataProvider
 {
     /**
      * Iterate with alpha2 value as key.
@@ -32,36 +32,6 @@ class ISO3166 implements \IteratorAggregate, \Countable, DataProvider
      */
     const KEY_NUMERIC = 'numeric';
 
-    /**
-     * Determines which value to return as key when iterating.
-     *
-     * @var string
-     */
-    private $iteratorKey;
-
-    /**
-     * Tracks iterator position.
-     *
-     * @var int
-     */
-    private $position = 0;
-
-    /**
-     * @param string $iteratorKey Either 'alpha2', 'alpha3' or 'numeric'.
-     */
-    public function __construct($iteratorKey = self::KEY_ALPHA2)
-    {
-        if (!in_array($iteratorKey, $keys = [self::KEY_ALPHA2, self::KEY_ALPHA3, self::KEY_NUMERIC], true)) {
-            throw new \DomainException(sprintf(
-                'Invalid value given for $iteratorKey, got "%s", expected one of: %s',
-                $iteratorKey,
-                implode(', ', $keys)
-            ));
-        }
-
-        $this->iteratorKey = $iteratorKey;
-        $this->position = 0;
-    }
     /**
      * @api
      *
@@ -158,25 +128,37 @@ class ISO3166 implements \IteratorAggregate, \Countable, DataProvider
     }
 
     /**
-     * @internal
+     * @api
      *
-     * @return \Traversable
+     * @param string $listBy
+     *
+     * @return \Generator
      */
-    public function getIterator()
+    public function listBy($listBy = self::KEY_ALPHA2)
     {
+        if (!in_array($listBy, $keys = [self::KEY_ALPHA2, self::KEY_ALPHA3, self::KEY_NUMERIC], true)) {
+            throw new \DomainException(sprintf(
+                'Invalid value for $indexBy, got "%s", expected one of: %s',
+                $listBy,
+                implode(', ', $keys)
+            ));
+        }
+
         foreach ($this->countries as $country) {
-            yield $country[$this->iteratorKey] => $country;
+            yield $country[$listBy] => $country;
         }
     }
 
     /**
      * @internal
      *
-     * @return int
+     * @return \Generator
      */
-    public function count()
+    public function getIterator()
     {
-        return count($this->countries);
+        foreach ($this->countries as $country) {
+            yield $country;
+        }
     }
 
     /**
