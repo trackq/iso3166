@@ -140,6 +140,14 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      */
     public function testIterator()
     {
+        try {
+            new ISO3166('foo');
+        } catch (\Exception $e) {
+            $this->assertInstanceOf('DomainException', $e);
+            $this->assertRegExp('{Invalid value given for \$iteratorKey, got "\w++", expected one of:(?: \w++,?)+}', $e->getMessage());
+        }
+
+
         $iso3166 = new ISO3166();
         $i = 0;
         foreach ($iso3166 as $key => $value) {

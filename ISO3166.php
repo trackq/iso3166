@@ -52,11 +52,11 @@ class ISO3166 implements \Iterator, \Countable, DataProvider
     public function __construct($iteratorKey = self::KEY_ALPHA2)
     {
         if (!in_array($iteratorKey, $keys = [self::KEY_ALPHA2, self::KEY_ALPHA3, self::KEY_NUMERIC], true)) {
-            throw new \DomainException(
+            throw new \DomainException(sprintf(
                 'Invalid value given for $iteratorKey, got "%s", expected one of: %s',
                 $iteratorKey,
                 implode(', ', $keys)
-            );
+            ));
         }
 
         $this->iteratorKey = $iteratorKey;
