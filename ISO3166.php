@@ -87,9 +87,9 @@ class ISO3166 implements \IteratorAggregate, DataProvider
     public function getByCode($code)
     {
         foreach ($this->countries as $country) {
-            if (0 === strcasecmp($code, $country['alpha2']) ||
-                0 === strcasecmp($code, $country['alpha3']) ||
-                0 === strcasecmp($code, $country['numeric'])
+            if (0 === strcasecmp($code, $country[self::KEY_ALPHA2]) ||
+                0 === strcasecmp($code, $country[self::KEY_ALPHA3]) ||
+                0 === strcasecmp($code, $country[self::KEY_NUMERIC])
             ) {
                 return $country;
             }
