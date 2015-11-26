@@ -7,7 +7,7 @@
  * the LICENSE file that was distributed with this source code.
  */
 
-namespace Alcohol;
+namespace Alcohol\ISO3166;
 
 class ISO3166Test extends \PHPUnit_Framework_TestCase
 {
@@ -136,6 +136,28 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @testdox Iterating the instance should behave as expected.
+     */
+    public function testIterator()
+    {
+        $iso3166 = new ISO3166();
+        $i = 0;
+        foreach ($iso3166 as $key => $value) {
+            ++$i;
+        }
+        $this->assertEquals(count($iso3166->getAll()), $i, 'Compare iterator count to count(getAll()).');
+    }
+
+    /**
+     * @testdox Iterator should be count()'able.
+     */
+    public function testCountable()
+    {
+        $iso3166 = new ISO3166();
+        $this->assertEquals(count($iso3166->getAll()), count($iso3166));
+    }
+
+    /**
      * @return array
      */
     public function invalidAlpha2Provider()
@@ -184,11 +206,13 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @param string $indexedBy
+     *
      * @return array
      */
     private function getCountries($indexedBy)
     {
-        $reflected = new \ReflectionClass('Alcohol\ISO3166');
+        $reflected = new \ReflectionClass('Alcohol\ISO3166\ISO3166');
         $countries = $reflected->getProperty('countries');
         $countries->setAccessible(true);
         $countries = $countries->getValue(new ISO3166());

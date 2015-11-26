@@ -27,7 +27,9 @@ Code:
 ``` php
 <?php
 
-$iso3166 = new Alcohol\ISO3166();
+use Alcohol\ISO3166\ISO3166;
+
+$iso3166 = new ISO3166();
 
 $iso3166->getByAlpha2('NL');
 // or
@@ -37,9 +39,14 @@ $iso3166->getByNumeric('528');
 
 // also
 $iso3166->getAll();
+
+// and
+foreach ($iso3166 as $key => $value) {
+    // ...
+}
 ```
 
-Result:
+The array returned is in the format of:
 
 ```
 Array
