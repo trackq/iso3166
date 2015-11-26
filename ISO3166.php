@@ -11,13 +11,8 @@ namespace Alcohol\ISO3166;
 
 class ISO3166 implements \IteratorAggregate, DataProvider
 {
-    /** @var string */
     const KEY_ALPHA2 = 'alpha2';
-
-    /** @var string */
     const KEY_ALPHA3 = 'alpha3';
-
-    /** @var string */
     const KEY_NUMERIC = 'numeric';
 
     /**
