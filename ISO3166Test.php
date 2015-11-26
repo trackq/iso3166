@@ -142,12 +142,10 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
     {
         $iso3166 = new ISO3166();
         $i = 0;
-        $current = current($iso3166);
         foreach ($iso3166 as $key => $value) {
             ++$i;
         }
         $this->assertEquals(count($iso3166->getAll()), $i, 'Compare iterator count to count(getAll()).');
-        $this->assertEquals($current, reset($iso3166), 'Compare initial current() value to reset() value.');
     }
 
     /**

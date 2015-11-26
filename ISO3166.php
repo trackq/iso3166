@@ -33,18 +33,18 @@ class ISO3166 implements \Iterator, \Countable, DataProvider
     const KEY_NUMERIC = 'numeric';
 
     /**
-     * Tracks iterator position.
-     *
-     * @var int
-     */
-    private $position = 0;
-
-    /**
      * Determines which value to return as key when iterating.
      *
      * @var string
      */
     private $iteratorKey;
+
+    /**
+     * Tracks iterator position.
+     *
+     * @var int
+     */
+    private $position = 0;
 
     /**
      * @param string $iteratorKey Either 'alpha2', 'alpha3' or 'numeric'.
