@@ -47,7 +47,7 @@ foreach ($iso3166->listBy(ISO3166::KEY_ALPHA3) as $key => $value) {
 }
 ```
 
-The array returned is in the format of:
+The data returned is in the format of:
 
 ```
 Array
