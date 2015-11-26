@@ -38,15 +38,12 @@ $iso3166->getByNumeric('528');
 
 // methods provided for convenience
 array $iso3166->getAll();
-
-// simple iterator implementation using a generator (uses alpha2 for keys)
 foreach ($iso3166 as $key => $value) {
-    // ...
+    // simple iterator implementation using a generator (uses alpha2 for keys)
 }
-
-// use a specific generator to iterate using other available keys, e.g.
 foreach ($iso3166->listBy(ISO3166::KEY_ALPHA3) as $key => $value) {
-    // ... constants available are KEY_ALPHA2, KEY_ALPHA3, KEY_NUMERIC
+    // use a specific generator to iterate using other available keys
+    // constants available are KEY_ALPHA2, KEY_ALPHA3, KEY_NUMERIC
 }
 ```
 
