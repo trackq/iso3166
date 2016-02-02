@@ -1,5 +1,5 @@
 {
-  "name": "alcohol/iso3166",
+  "name": "trackq/iso3166",
   "description": "ISO 3166-1 PHP Library",
   "keywords": ["ISO 3166", "ISO", "3166", "3166-1", "countries", "library"],
   "homepage": "http://alcohol.github.io/iso3166/",
