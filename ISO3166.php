@@ -14,7 +14,34 @@ class ISO3166 implements \IteratorAggregate, DataProvider
     const KEY_ALPHA2 = 'alpha2';
     const KEY_ALPHA3 = 'alpha3';
     const KEY_NUMERIC = 'numeric';
+    const KEY_NAME = 'name';
 
+    /**
+     * @api
+     *
+     * @uses ::getByName()
+     *
+     * @param string $name
+     *
+     * @throws \DomainException
+     *
+     * @return array
+     */
+    public function getByName($name)
+    {
+        if (!preg_match('/.{4,}/', $name)) {
+            throw new \DomainException('Countryname to short: '.$name);
+        }
+        
+        foreach($this->countries as $country) {
+            
+            if(preg_match("/$name/i", $country[SELF::KEY_NAME])) {
+                return $country;
+            }
+            
+        }
+    }
+    
     /**
      * @api
      *
